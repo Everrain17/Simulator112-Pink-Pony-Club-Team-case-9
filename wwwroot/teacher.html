@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АРМ Преподавателя — Управление Симулятором 112</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="teacher-style.css">
+</head>
+<body class="teacher-body">
+
+<header class="top-bar">
+<div class="title-block">
+<h1>АРМ Преподавателя</h1>
+<span>Модуль оперативного контроля и инъекций сценариев</span>
+</div>
+
+<div class="status-indicator">
+<span class="status-dot" id="sim-status-dot">●</span>
+<span id="sim-status-text">СТАТУС: ОЖИДАНИЕ</span>
+</div>
+</header>
+
+<div class="workspace">
+
+<div class="panel-left">
+
+<div class="box-header">
+<i class="bi bi-play-circle-fill me-1"></i> Инициализация симуляции
+</div>
+
+<div class="box-body form-grid">
+
+<div class="field">
+<label>Генератор (Seed)</label>
+<input type="number" id="simSeed" value="42">
+</div>
+
+<div class="field">
+<label>Профиль АРМ ДДС</label>
+<select id="simProfile">
+<option value="0">Universal_112 (Общий пульт)</option>
+<option value="3">GasService (Служба газа 104)</option>
+<option value="1">Mosvodokanal (Мосводоканал)</option>
+<option value="4">HousingServices (ЖКХ / Лифты)</option>
+</select>
+</div>
+
+<div class="field">
+<label>Лимит ответа оператора (сек)</label>
+<input type="number" id="timeAnswer" value="30">
+</div>
+
+<div class="field">
+<label>Норматив SLA карточки (сек)</label>
+<input type="number" id="timeSla" value="75">
+</div>
+
+<div class="field full">
+<label>Макс. длительность звонка (сек)</label>
+<input type="number" id="timeEnd" value="420">
+</div>
+
+<div class="actions-row full">
+<button class="btn btn-start" onclick="startSimulation()">Запустить систему</button>
+<button class="btn btn-stop" onclick="stopSimulation()">Остановить симуляцию</button>
+<button class="btn btn-start" onclick="exportTeacherData()">Выгрузить данные</button>
+</div>
+
+</div>
+
+<div class="box-header mt-3">
+<i class="bi bi-person-fill-gear me-1"></i> Корректировка ИИ-персонажа (Вмешательство)
+</div>
+
+<div class="box-body">
+
+<div class="field mb-2">
+<label>CallId звонка для коррекции (например: CALL-0001)</label>
+<input type="text" id="interveneCallId" placeholder="Введите ID звонка оператора">
+</div>
+
+<div class="field mb-2">
+<label>Новый сценарий/установка преподавателя вслух</label>
+<textarea id="interveneComment" placeholder="Пример: Твой дом начинает рушиться, паникуй сильнее и требуй спасателей МЧС!"></textarea>
+</div>
+
+<button class="btn btn-intervene w-100" onclick="sendTeacherIntervention()">
+Скорректировать реплику
+</button>
+
+</div>
+
+</div>
+
+<div class="panel-right">
+
+<div class="box-header">
+<i class="bi bi-lightning-charge-fill me-1"></i> Оперативная инъекция экстренного инцидента
+</div>
+
+<div class="box-body form-grid">
+
+<div class="field">
+<label>Базовое ведомство (Тип)</label>
+<select id="injType">
+<option value="0">Fire (Пожар / МЧС)</option>
+<option value="3">Accident (ДТП / Зажатые)</option>
+<option value="4">Gas (Утечка газа)</option>
+<option value="2">Crime (Криминал / Нападение)</option>
+<option value="1">Medical (Скорая 103)</option>
+</select>
+</div>
+
+<div class="field">
+<label>Уровень паники ИИ (0-100%)</label>
+<input type="number" id="injPanic" value="85">
+</div>
+
+<div class="field">
+<label>Начальная тяжесть (1-10)</label>
+<input type="number" id="injSeverity" value="60" min="0" max="100">
+</div>
+
+<div class="field">
+<label>Координаты Lat (Широта)</label>
+<input type="text" id="injLat" value="55.655">
+</div>
+
+<div class="field full">
+<label>Координаты Lon (Долгота)</label>
+<input type="text" id="injLon" value="37.575">
+</div>
+
+<div class="field full">
+<label>Адрес инцидента в Москве</label>
+<input type="text" id="injAddress" value="ул. Профсоюзная, дом 5/9">
+</div>
+
+<div class="field full">
+<label>Сценарная фабула (Описание для ИИ)</label>
+<textarea id="injDescription">Пожар на мачте освещения, открытое горение, сильный черный дым идет в сторону окон жилого дома.</textarea>
+</div>
+
+<div class="field full">
+<label>Стартовая фраза прямой речи (Если нужна кастомная)</label>
+<input type="text" id="injUtterance" placeholder="Алло! Срочно, у нас тут всё горит, провода искрят!">
+</div>
+
+<div class="full mt-2">
+<button class="btn btn-inject w-100" onclick="injectIncident()">
+<i class="bi bi-radioactive me-1"></i> Выбросить инцидент на пульт студентам
+</button>
+</div>
+
+</div>
+
+<div class="panel-full" style="margin-top: 20px;">
+
+<div class="box-header">
+<i class="bi bi-people-fill me-1"></i> Управление студентами
+</div>
+
+<div class="box-body">
+
+<div style="display: flex; gap: 10px; margin-bottom: 15px; align-items: center;">
+
+<input
+    type="text"
+    id="new-student-username"
+    placeholder="Логин студента"
+    style="flex: 1; padding: 8px; border: 1px solid #adb5bd; border-radius: 2px;"
+>
+
+<input
+    type="text"
+    id="new-student-password"
+    placeholder="Пароль"
+    style="flex: 1; padding: 8px; border: 1px solid #adb5bd; border-radius: 2px;"
+>
+
+<button class="btn btn-start" onclick="createStudent()">
+Создать студента
+</button>
+
+</div>
+
+<table style="width: 100%; border-collapse: collapse;">
+
+<thead>
+
+<tr style="background: #e2e6e8;">
+
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #adb5bd;">
+ID
+</th>
+
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #adb5bd;">
+Логин
+</th>
+
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #adb5bd;">
+Роль
+</th>
+
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #adb5bd;">
+Статус
+</th>
+
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #adb5bd;">
+Создан
+</th>
+
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #adb5bd;">
+Действия
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="students-table-body">
+
+<tr>
+<td colspan="6" style="padding: 20px; text-align: center; color: #6c757d;">
+Загрузка...
+</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const PYTHON_API_BASE =
+window.SYSTEM112_PYTHON_API_BASE ||
+`${window.location.protocol}//${window.location.hostname}:8010/api/v1`;
+
+let accessToken =
+localStorage.getItem("system112_access_token") || "";
+
+let refreshToken =
+localStorage.getItem("system112_refresh_token") || "";
+
+let classifierCatalog = {
+    incidentTypes: [],
+    services: []
+};
+
+// Лаунчер передаёт access-token через ?token=... .
+const launcherToken =
+    new URLSearchParams(window.location.search).get("token");
+
+if (launcherToken) {
+
+    accessToken = launcherToken;
+
+    localStorage.setItem(
+        "system112_access_token",
+        accessToken
+    );
+
+    const cleanUrl =
+        `${window.location.origin}${window.location.pathname}`;
+
+    window.history.replaceState(
+        {},
+        document.title,
+        cleanUrl
+    );
+}
+
+function authHeaders(extra = {}) {
+
+    const headers = {
+        ...extra
+    };
+
+    if (accessToken) {
+        headers.Authorization =
+            `Bearer ${accessToken}`;
+    }
+
+    return headers;
+}
+
+async function parseResponse(res) {
+
+    const raw =
+        await res.text();
+
+    let data = null;
+
+    try {
+        data =
+            raw
+                ? JSON.parse(raw)
+                : null;
+
+    } catch (_) {
+
+        data = raw;
+
+    }
+
+    if (!res.ok) {
+
+        if (
+            res.status === 401 &&
+            refreshToken
+        ) {
+
+            throw Object.assign(
+                new Error("TOKEN_EXPIRED"),
+                {
+                    tokenExpired: true
+                }
+            );
+
+        }
+
+        const detail =
+            Array.isArray(data?.detail)
+                ? data.detail
+                    .map(
+                        x => x.msg || JSON.stringify(x)
+                    )
+                    .join("; ")
+                : (
+                    data?.detail ||
+                    data?.message ||
+                    raw ||
+                    `HTTP ${res.status}`
+                );
+
+        throw new Error(
+            String(detail)
+        );
+    }
+
+    return data;
+}
+
+async function apiFetch(
+    path,
+    options = {},
+    retry = true
+) {
+
+    const opts = {
+        ...options,
+        headers: authHeaders(
+            options.headers || {}
+        )
+    };
+
+    try {
+
+        return await parseResponse(
+            await fetch(
+                `${PYTHON_API_BASE}${path}`,
+                opts
+            )
+        );
+
+    } catch (error) {
+
+        if (
+            error instanceof TypeError &&
+            error.message === "Failed to fetch"
+        ) {
+
+            throw new Error(
+                "Не удалось подключиться к Python API. Проверьте, что backend запущен и CORS разрешает https://127.0.0.1:5000."
+            );
+        }
+
+        if (
+            retry &&
+            error.tokenExpired &&
+            refreshToken
+        ) {
+
+            const refreshRes =
+                await fetch(
+                    `${PYTHON_API_BASE}/auth/refresh`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+                        body: JSON.stringify({
+                            refresh_token:
+                                refreshToken
+                        })
+                    }
+                );
+
+            if (refreshRes.ok) {
+
+                const tokens =
+                    await refreshRes.json();
+
+                accessToken =
+                    tokens.access_token || "";
+
+                refreshToken =
+                    tokens.refresh_token ||
+                    refreshToken;
+
+                localStorage.setItem(
+                    "system112_access_token",
+                    accessToken
+                );
+
+                localStorage.setItem(
+                    "system112_refresh_token",
+                    refreshToken
+                );
+
+                return apiFetch(
+                    path,
+                    options,
+                    false
+                );
+            }
+        }
+
+        throw error;
+    }
+}
+
+async function loadClassifier() {
+
+    const data =
+        await apiFetch(
+            "/runtime/classifier",
+            {
+                method: "GET"
+            }
+        );
+
+    classifierCatalog = {
+        incidentTypes:
+            Array.isArray(data?.incidentTypes)
+                ? data.incidentTypes
+                : [],
+
+        services:
+            Array.isArray(data?.services)
+                ? data.services
+                : []
+    };
+
+    const select =
+        document.getElementById("injType");
+
+    const current =
+        select.value;
+
+    select.innerHTML = "";
+
+    classifierCatalog.incidentTypes.forEach(
+        item => {
+
+            const option =
+                document.createElement("option");
+
+            option.value =
+                item.code;
+
+            option.textContent =
+                `${item.code} — ${item.name || item.code}`;
+
+            select.appendChild(
+                option
+            );
+        }
+    );
+
+    if (
+        [...select.options]
+            .some(
+                x => x.value === current
+            )
+    ) {
+
+        select.value =
+            current;
+    }
+}
+
+async function updateStatus() {
+
+    try {
+
+        const data =
+            await apiFetch(
+                "/runtime/state",
+                {
+                    method: "GET"
+                }
+            );
+
+        const dot =
+            document.getElementById(
+                "sim-status-dot"
+            );
+
+        const txt =
+            document.getElementById(
+                "sim-status-text"
+            );
+
+        if (data.isRunning) {
+
+            dot.style.color =
+                "#00ff41";
+
+            txt.textContent =
+                `СИМУЛЯЦИЯ ЗАПУЩЕНА (${data.elapsedSeconds} с)`;
+
+        } else {
+
+            dot.style.color =
+                "#ff3b30";
+
+            txt.textContent =
+                "СТАТУС: ОЖИДАНИЕ ЗАПУСКА";
+        }
+
+    } catch (_) {}
+}
+
+async function startSimulation() {
+
+    const payload = {
+
+        seed:
+            parseInt(
+                document.getElementById(
+                    "simSeed"
+                ).value
+            ) || 42,
+
+        profile:
+            parseInt(
+                document.getElementById(
+                    "simProfile"
+                ).value
+            ) || 0,
+
+        callAnswerTimeSeconds:
+            parseInt(
+                document.getElementById(
+                    "timeAnswer"
+                ).value
+            ) || 30,
+
+        slaTimeSeconds:
+            parseInt(
+                document.getElementById(
+                    "timeSla"
+                ).value
+            ) || 75,
+
+        endCallTimeSeconds:
+            parseInt(
+                document.getElementById(
+                    "timeEnd"
+                ).value
+            ) || 420
+    };
+
+    try {
+
+        const result =
+            await apiFetch(
+                "/runtime/start",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+                    body:
+                        JSON.stringify(payload)
+                }
+            );
+
+        await updateStatus();
+
+        alert(
+            `Симуляция запущена. Seed: ${result?.seed ?? payload.seed}`
+        );
+
+    } catch (e) {
+
+        alert(
+            "Ошибка запуска: " +
+            e.message
+        );
+    }
+}
+
+async function stopSimulation() {
+
+    try {
+
+        await apiFetch(
+            "/runtime/stop",
+            {
+                method: "POST"
+            }
+        );
+
+        await updateStatus();
+
+        alert(
+            "Симуляция остановлена."
+        );
+
+    } catch (e) {
+
+        alert(
+            "Ошибка остановки: " +
+            e.message
+        );
+    }
+}
+
+async function injectIncident() {
+
+    const code =
+        document.getElementById(
+            "injType"
+        ).value;
+
+    if (!code) {
+
+        alert(
+            "Выберите тип происшествия."
+        );
+
+        return;
+    }
+
+    const payload = {
+
+        incidentTypeCode:
+            code,
+
+        severity:
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    parseInt(
+                        document.getElementById(
+                            "injSeverity"
+                        ).value
+                    ) || 60
+                )
+            ),
+
+        initialPanic:
+            Math.max(
+                0,
+                Math.min(
+                    100,
+                    parseInt(
+                        document.getElementById(
+                            "injPanic"
+                        ).value
+                    ) || 50
+                )
+            ),
+
+        requiredServiceCodes: [],
+
+        criticalTagCodes: [],
+
+        optionalTagCodes: [],
+
+        description:
+            document.getElementById(
+                "injDescription"
+            ).value,
+
+        address:
+            document.getElementById(
+                "injAddress"
+            ).value,
+
+        lat:
+            parseFloat(
+                document.getElementById(
+                    "injLat"
+                ).value
+            ) || 0,
+
+        lon:
+            parseFloat(
+                document.getElementById(
+                    "injLon"
+                ).value
+            ) || 0,
+
+        customUtterance:
+            document.getElementById(
+                "injUtterance"
+            ).value || null
+    };
+
+    try {
+
+        const result =
+            await apiFetch(
+                "/runtime/inject",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+                    body:
+                        JSON.stringify(payload)
+                }
+            );
+
+        alert(
+            `Инцидент инжектирован: ${result?.callId || ""}`
+        );
+
+    } catch (e) {
+
+        alert(
+            "Ошибка инъекции: " +
+            e.message
+        );
+    }
+}
+
+async function sendTeacherIntervention() {
+
+    const callId =
+        document.getElementById(
+            "interveneCallId"
+        ).value.trim();
+
+    const comment =
+        document.getElementById(
+            "interveneComment"
+        ).value.trim();
+
+    if (!callId || !comment) {
+
+        alert(
+            "Заполните CallId и текст инструкции."
+        );
+
+        return;
+    }
+
+    try {
+
+        await apiFetch(
+            `/runtime/calls/${encodeURIComponent(callId)}/intervene`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+                body:
+                    JSON.stringify({
+                        comment
+                    })
+            }
+        );
+
+        alert(
+            "Инструкция преподавателя передана."
+        );
+
+    } catch (e) {
+
+        alert(
+            "Ошибка вмешательства: " +
+            e.message
+        );
+    }
+}
+
+// ==========================================
+// УПРАВЛЕНИЕ СТУДЕНТАМИ (ФУНКЦИИ)
+// ==========================================
+
+async function loadStudents() {
+
+    const tbody =
+        document.getElementById(
+            "students-table-body"
+        );
+
+    if (!tbody) return;
+
+    tbody.innerHTML =
+        '<tr><td colspan="6" style="padding: 20px; text-align: center; color: #6c757d;">Загрузка...</td></tr>';
+
+    try {
+
+        const response =
+            await apiFetch(
+                "/users/trainees",
+                {
+                    method: "GET"
+                }
+            );
+
+        console.log(
+            "[TEACHER] GET /users/trainees:",
+            response
+        );
+
+        if (
+            !response?.items ||
+            response.items.length === 0
+        ) {
+
+            tbody.innerHTML =
+                '<tr><td colspan="6" style="padding: 20px; text-align: center; color: #6c757d;">Студенты не найдены</td></tr>';
+
+            return;
+        }
+
+        tbody.innerHTML =
+            response.items.map(
+                student => `
+
+<tr>
+
+<td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+    ${student.id}
+</td>
+
+<td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+    ${student.username}
+</td>
+
+<td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+    ${student.role}
+</td>
+
+<td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+    ${student.is_active ? "Активен" : "Неактивен"}
+</td>
+
+<td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+    ${new Date(student.created_at).toLocaleString("ru-RU")}
+</td>
+
+<td style="padding: 8px; border-bottom: 1px solid #dee2e6;">
+
+<button
+    onclick="resetStudentPassword(${student.id})"
+    style="padding: 4px 8px; background: #ffc107; border: none; border-radius: 2px; cursor: pointer; font-size: 10px;"
+>
+    Сбросить пароль
+</button>
+
+</td>
+
+</tr>
+
+`
+            ).join("");
+
+    } catch (error) {
+
+        console.error(
+            "[TEACHER] Ошибка загрузки студентов:",
+            error
+        );
+
+        tbody.innerHTML = `
+
+<tr>
+
+<td
+    colspan="6"
+    style="padding: 20px; text-align: center; color: #dc3545;"
+>
+    Ошибка загрузки студентов:
+    ${error.message}
+</td>
+
+</tr>
+
+`;
+    }
+}
+
+async function createStudent() {
+
+    const username =
+        document
+            .getElementById(
+                "new-student-username"
+            )
+            ?.value.trim() || "";
+
+    const password =
+        document
+            .getElementById(
+                "new-student-password"
+            )
+            ?.value.trim() || "";
+
+    if (!username || !password) {
+
+        alert(
+            "Заполните логин и пароль"
+        );
+
+        return;
+    }
+
+    try {
+
+        await apiFetch(
+            "/users/trainee",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+                body:
+                    JSON.stringify({
+                        username:
+                            username,
+
+                        password:
+                            password,
+
+                        role:
+                            "trainee"
+                    })
+            }
+        );
+
+        alert(
+            `Студент ${username} создан успешно`
+        );
+
+        document.getElementById(
+            "new-student-username"
+        ).value = "";
+
+        document.getElementById(
+            "new-student-password"
+        ).value = "";
+
+        await loadStudents();
+
+    } catch (error) {
+
+        alert(
+            "Ошибка создания студента: " +
+            error.message
+        );
+    }
+}
+
+async function resetStudentPassword(
+    studentId
+) {
+
+    if (
+        !confirm(
+            "Сбросить пароль студента?"
+        )
+    ) {
+        return;
+    }
+
+    try {
+
+        const result =
+            await apiFetch(
+                `/users/${studentId}/reset-password`,
+                {
+                    method: "POST"
+                }
+            );
+
+        alert(
+            `Новый пароль: ${result.new_password}\n\n` +
+            "Сохраните его и передайте студенту!"
+        );
+
+    } catch (error) {
+
+        alert(
+            "Ошибка сброса пароля: " +
+            error.message
+        );
+    }
+}
+
+// ==========================================
+// ВЫГРУЗКА ДАННЫХ ПРЕПОДАВАТЕЛЯ
+// ==========================================
+
+function createExportTimestamp() {
+
+    const now =
+        new Date();
+
+    const pad =
+        n => String(n).padStart(2, "0");
+
+    return (
+        `${now.getFullYear()}-` +
+        `${pad(now.getMonth() + 1)}-` +
+        `${pad(now.getDate())}_` +
+        `${pad(now.getHours())}-` +
+        `${pad(now.getMinutes())}-` +
+        `${pad(now.getSeconds())}`
+    );
+}
+
+function createJsonBlob(data) {
+
+    return new Blob(
+        [
+            JSON.stringify(
+                data,
+                null,
+                2
+            )
+        ],
+        {
+            type: "application/json;charset=utf-8"
+        }
+    );
+}
+
+async function getExportData() {
+
+    const exportData = {
+        schemaVersion: 1,
+        exportedAt: new Date().toISOString(),
+        source: "System112 Teacher ARM",
+        currentUser: null,
+        runtimeState: null,
+        classifier: null,
+        students: null,
+        savedCalls: null
+    };
+
+    const errors = [];
+
+    try {
+
+        exportData.currentUser =
+            await apiFetch(
+                "/auth/me",
+                {
+                    method: "GET"
+                }
+            );
+
+    } catch (error) {
+
+        errors.push(
+            `currentUser: ${error.message}`
+        );
+    }
+
+    try {
+
+        exportData.runtimeState =
+            await apiFetch(
+                "/runtime/state",
+                {
+                    method: "GET"
+                }
+            );
+
+    } catch (error) {
+
+        errors.push(
+            `runtimeState: ${error.message}`
+        );
+    }
+
+    try {
+
+        exportData.classifier =
+            await apiFetch(
+                "/runtime/classifier",
+                {
+                    method: "GET"
+                }
+            );
+
+    } catch (error) {
+
+        errors.push(
+            `classifier: ${error.message}`
+        );
+    }
+
+    try {
+
+        exportData.students =
+            await apiFetch(
+                "/users/trainees",
+                {
+                    method: "GET"
+                }
+            );
+
+    } catch (error) {
+
+        errors.push(
+            `students: ${error.message}`
+        );
+    }
+
+    try {
+
+        exportData.savedCalls =
+            await apiFetch(
+                "/runtime/teacher/calls",
+                {
+                    method: "GET"
+                }
+            );
+
+    } catch (error) {
+
+        errors.push(
+            `savedCalls: ${error.message}`
+        );
+    }
+
+    if (errors.length) {
+
+        exportData.exportErrors =
+            errors;
+    }
+
+    return exportData;
+}
+
+async function saveExportToDirectory(
+    directoryHandle,
+    exportData,
+    timestamp
+) {
+
+    const rootFolder =
+        await directoryHandle.getDirectoryHandle(
+            "System112_Data",
+            {
+                create: true
+            }
+        );
+
+    const sessionFolder =
+        await rootFolder.getDirectoryHandle(
+            `Export_${timestamp}`,
+            {
+                create: true
+            }
+        );
+
+    const files = [
+
+        {
+            name:
+                "all_data.json",
+
+            data:
+                exportData
+        },
+
+        {
+            name:
+                "current_user.json",
+
+            data:
+                exportData.currentUser
+        },
+
+        {
+            name:
+                "runtime_state.json",
+
+            data:
+                exportData.runtimeState
+        },
+
+        {
+            name:
+                "classifier.json",
+
+            data:
+                exportData.classifier
+        },
+
+        {
+            name:
+                "students.json",
+
+            data:
+                exportData.students
+        },
+
+        {
+            name:
+                "saved_calls.json",
+
+            data:
+                exportData.savedCalls
+        }
+
+    ];
+
+    for (
+        const file of files
+    ) {
+
+        const fileHandle =
+            await sessionFolder.getFileHandle(
+                file.name,
+                {
+                    create: true
+                }
+            );
+
+        const writable =
+            await fileHandle.createWritable();
+
+        await writable.write(
+            createJsonBlob(
+                file.data
+            )
+        );
+
+        await writable.close();
+    }
+
+    const manifest = {
+
+        schemaVersion: 1,
+
+        exportedAt:
+            exportData.exportedAt,
+
+        folder:
+            `System112_Data/Export_${timestamp}`,
+
+        files:
+            files.map(
+                file => file.name
+            ),
+
+        errors:
+            exportData.exportErrors || []
+
+    };
+
+    const manifestHandle =
+        await sessionFolder.getFileHandle(
+            "manifest.json",
+            {
+                create: true
+            }
+        );
+
+    const manifestWritable =
+        await manifestHandle.createWritable();
+
+    await manifestWritable.write(
+        createJsonBlob(
+            manifest
+        )
+    );
+
+    await manifestWritable.close();
+}
+
+async function saveExportAsSingleFile(
+    exportData,
+    timestamp
+) {
+
+    const fileName =
+        `System112_Data_${timestamp}.json`;
+
+    if (
+        "showSaveFilePicker" in window
+    ) {
+
+        const fileHandle =
+            await window.showSaveFilePicker(
+                {
+                    suggestedName:
+                        fileName,
+
+                    types: [
+                        {
+                            description:
+                                "JSON данные System112",
+
+                            accept: {
+                                "application/json":
+                                    [".json"]
+                            }
+                        }
+                    ]
+                }
+            );
+
+        const writable =
+            await fileHandle.createWritable();
+
+        await writable.write(
+            createJsonBlob(
+                exportData
+            )
+        );
+
+        await writable.close();
+
+        return;
+    }
+
+    const blob =
+        createJsonBlob(
+            exportData
+        );
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+    const link =
+        document.createElement("a");
+
+    link.href =
+        url;
+
+    link.download =
+        fileName;
+
+    document.body.appendChild(
+        link
+    );
+
+    link.click();
+
+    link.remove();
+
+    URL.revokeObjectURL(
+        url
+    );
+}
+
+async function exportTeacherData() {
+
+    try {
+
+        const button =
+            document.querySelector(
+                'button[onclick="exportTeacherData()"]'
+            );
+
+        if (button) {
+
+            button.disabled =
+                true;
+
+            button.textContent =
+                "Подготовка данных...";
+        }
+
+        const timestamp =
+            createExportTimestamp();
+
+        const exportData =
+            await getExportData();
+
+        if (
+            "showDirectoryPicker" in window
+        ) {
+
+            let directoryHandle;
+
+            try {
+
+                directoryHandle =
+                    await window.showDirectoryPicker(
+                        {
+                            mode: "readwrite"
+                        }
+                    );
+
+            } catch (error) {
+
+                if (
+                    error.name ===
+                    "AbortError"
+                ) {
+
+                    return;
+                }
+
+                throw error;
+            }
+
+            await saveExportToDirectory(
+                directoryHandle,
+                exportData,
+                timestamp
+            );
+
+            alert(
+                "Данные успешно выгружены.\n\n" +
+                `Создана папка:\nSystem112_Data/Export_${timestamp}`
+            );
+
+            return;
+        }
+
+        await saveExportAsSingleFile(
+            exportData,
+            timestamp
+        );
+
+        alert(
+            "Браузер не поддерживает выбор папки.\n\n" +
+            "Данные сохранены одним JSON-файлом."
+        );
+
+    } catch (error) {
+
+        console.error(
+            "[TEACHER EXPORT] Ошибка выгрузки:",
+            error
+        );
+
+        alert(
+            "Ошибка выгрузки данных:\n\n" +
+            error.message
+        );
+
+    } finally {
+
+        const button =
+            document.querySelector(
+                'button[onclick="exportTeacherData()"]'
+            );
+
+        if (button) {
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "Выгрузить данные";
+        }
+    }
+}
+
+(async () => {
+
+    if (!accessToken) {
+
+        console.error(
+            "АРМ преподавателя открыт без токена лаунчера."
+        );
+
+        return;
+    }
+
+    try {
+
+        const me =
+            await apiFetch(
+                "/auth/me",
+                {
+                    method: "GET"
+                }
+            );
+
+        if (
+            !["teacher", "admin"].includes(
+                me.role
+            )
+        ) {
+
+            throw new Error(
+                "Для АРМ преподавателя требуется роль teacher или admin."
+            );
+        }
+
+        console.log(
+            `АРМ преподавателя: авторизация ${me.username} (${me.role})`
+        );
+
+        await loadClassifier();
+
+        await updateStatus();
+
+        await loadStudents();
+
+    } catch (e) {
+
+        console.error(
+            "Ошибка инициализации АРМ преподавателя:",
+            e
+        );
+
+        const statusText =
+            document.getElementById(
+                "sim-status-text"
+            );
+
+        if (statusText) {
+
+            statusText.textContent =
+                `ОШИБКА ПОДКЛЮЧЕНИЯ: ${e.message}`;
+        }
+    }
+
+    setInterval(
+        updateStatus,
+        1500
+    );
+
+})();
+
+</script>
+
+</body>
+</html>

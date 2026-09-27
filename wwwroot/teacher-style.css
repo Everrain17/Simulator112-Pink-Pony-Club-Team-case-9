@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.teacher-body {
+    background-color: #3d4549;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ШАПКА АРМ ПРЕПОДА */
+.top-bar {
+    background: linear-gradient(180deg, #4a5357 0%, #353d41 100%);
+    border-bottom: 2px solid #23292c;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    flex-shrink: 0;
+}
+
+.title-block h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.title-block span {
+    font-size: 9px;
+    color: #a1a9ae;
+}
+
+.status-indicator {
+    background: #1a1d20;
+    padding: 6px 12px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#sim-status-dot {
+    color: #ff3b30;
+    font-size: 12px;
+}
+
+/* РАБОЧИЙ СТОЛ ПАНЕЛИ */
+.workspace {
+    flex-grow: 1;
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+    background: #4e575c;
+    overflow-y: auto;
+}
+
+.panel-left, .panel-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* СИСТЕМНЫЕ БЛОКИ КУСП */
+.box-header {
+    background: #333d42;
+    color: #ffffff;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 11px;
+    border-radius: 2px 2px 0 0;
+}
+
+.box-body {
+    background: #f1f5f7;
+    color: #212529;
+    padding: 15px;
+    border: 1px solid #cbd2d4;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+}
+
+/* СЕТКА ФОРМЫ */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 9px;
+    color: #555c61;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.field input, .field select, .field textarea {
+    height: 24px;
+    border: 1px solid #a1a8ab;
+    padding: 0 6px;
+    font-size: 11px;
+    border-radius: 1px;
+    background: #ffffff;
+}
+
+.field textarea {
+    height: 55px;
+    resize: none;
+    padding: 4px 6px;
+}
+
+/* КНОПКИ УПРАВЛЕНИЯ */
+.actions-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.btn {
+    height: 28px;
+    border: none;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+.btn-start { background: #2e7d32; border-bottom: 2px solid #1b5e20; flex-grow: 1; }
+.btn-start:hover { background: #1b5e20; }
+
+.btn-stop { background: #c62828; border-bottom: 2px solid #b71c1c; }
+.btn-stop:hover { background: #b71c1c; }
+
+.btn-inject { background: #e65100; border-bottom: 2px solid #bf360c; height: 32px; font-size: 12px; }
+.btn-inject:hover { background: #bf360c; }
+
+.btn-intervene { background: #1565c0; border-bottom: 2px solid #0d47a1; height: 26px; }
+.btn-intervene:hover { background: #0d47a1; }
+
+.w-100 { width: 100%; }
+.mt-3 { margin-top: 15px; }
+.mb-2 { margin-bottom: 10px; }

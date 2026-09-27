@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AIEngine",
+    "\\SimCore",
+    "\\SimCore\\Contracts",
+    "\\SimCore\\Data",
+    "\\SimCore\\Engine",
+    "\\SimCore\\Entities",
+    "\\SimCore\\Enums",
+    "\\SimCore\\Interfaces",
+    "\\wwwroot"
+  ],
+  "SelectedNode": "\\SimCore\\Engine\\OperatorAuditEngine.cs",
+  "PreviewInSolutionExplorer": false
+}

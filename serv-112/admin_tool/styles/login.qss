@@ -1,0 +1,63 @@
+/* === Диалог логина === */
+
+QDialog#LoginDialog {
+    background: {bg};
+}
+
+QFrame#LoginCard {
+    background: {panel};
+    border: 1px solid {border};
+    border-radius: {radius}px;
+}
+
+QLabel#LoginTitle {
+    color: {text};
+    font-family: "{font_base}";
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+QLabel#LoginSubtitle {
+    color: {text_muted};
+    font-family: "{font_base}";
+    font-size: {font_size}px;
+}
+
+QLabel#LoginStatus {
+    font-family: "{font_base}";
+    font-size: {font_size}px;
+    padding: 4px 0;
+}
+QLabel#LoginStatus[state="ok"]    { color: {ok}; }
+QLabel#LoginStatus[state="error"] { color: {error}; }
+QLabel#LoginStatus[state="wait"]  { color: {text_muted}; }
+
+QLineEdit#LoginInput {
+    background: {input_bg};
+    color: {text};
+    border: 1px solid {border};
+    border-radius: {radius}px;
+    padding: 8px 12px;
+    font-family: "{font_base}";
+    font-size: {font_size}px;
+}
+QLineEdit#LoginInput:focus {
+    border-color: {accent};
+}
+QLineEdit#LoginInput:disabled {
+    color: {text_muted};
+}
+
+QPushButton#LoginButton {
+    background: {accent};
+    color: {on_accent};
+    border: none;
+    border-radius: {radius}px;
+    padding: 10px 18px;
+    font-family: "{font_base}";
+    font-size: {font_size}px;
+    font-weight: 600;
+}
+QPushButton#LoginButton:hover    { background: {accent_hover}; }
+QPushButton#LoginButton:disabled { background: {border}; color: {text_muted}; }

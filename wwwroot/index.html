@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>АРМ 007 — Поиск происшествий</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ВЕРХНЯЯ ШАПКА АРМ -->
+        <header class="top">
+            <section class="title">
+                <h1>Поиск происшествий</h1>
+                <button class="title-search" id="topSearch" aria-label="Поиск"></button>
+                <button class="advanced" id="advanced">расширенный по параметрам <span>Corporate ⌄</span></button>
+                <button class="reset" id="reset">сбросить</button>
+            </section>
+
+            <section class="system">
+                <div class="system-info">
+                    <div class="system-date" id="date"></div>
+                    <div class="system-user" id="system-user-info">
+    ID студента: <span id="student-id">—</span>
+    <span>//</span>
+    <span id="student-name">—</span>
+    <span>//</span>
+    <span id="arm-number">АРМ —</span>
+    <i>i</i>
+</div>
+                </div>
+                <div class="modules">
+                    <button class="module active" data-module="Журнал"><span class="ico">☰</span><span class="txt">журнал</span></button>
+                    <button class="module" data-module="Экран"><span class="ico">▣</span><span class="txt">экран</span></button>
+                    <button class="module" data-module="Статистика"><span class="ico">▤</span><span class="txt">статистика</span></button>
+                    <button class="module" data-module="УЕФ"><span class="ico">⚙</span><span class="txt">УЕФ</span></button>
+                    <button class="module" data-module="БДП"><span class="ico">▥</span><span class="txt">БДП</span></button>
+                    <button class="module" data-module="Заявители"><span class="ico">♟</span><span class="txt">заявители</span></button>
+                    <button class="module" data-module="Телефония"><span class="ico">☎</span><span class="txt">телефония</span></button>
+                    <button class="module" data-module="Аудио"><span class="ico">◉</span><span class="txt">аудио</span></button>
+                    <button class="module" data-module="Контроль"><span class="ico">▣</span><span class="txt">контроль</span></button>
+                    <button class="module" data-module="Смена"><span class="ico">▥</span><span class="txt">смена</span></button>
+                    <button class="module" data-module="Режимы"><span class="ico">◫</span><span class="txt">режимы</span></button>
+                </div>
+                <div class="clock">
+                    <span class="clock-main" id="clock">00:00</span>
+                    <span class="clock-sec" id="seconds">00</span>
+                </div>
+            </section>
+            <button class="new-card" id="newCard">создать<br>новую<br>карточку</button>
+        </header>
+
+        <!-- ОПЕРАТИВНАЯ ПАНЕЛЬ -->
+        <section class="subbar">
+            <div class="sub-left">
+                <button class="search-mini" id="miniSearch" aria-label="Поиск"></button>
+            </div>
+            <div class="sub-controls">
+                <span class="notify"><span class="notify-dot">●</span>уведомления</span>
+                <span class="toggle on" id="autoToggle"></span><span>автообновление</span>
+                <span class="toggle" id="queueToggle"></span><span>обращения в очереди</span>
+                <span class="pipe">|</span>
+                <button class="columns" id="columns">выберите что показать <span>⌄</span></button>
+            </div>
+        </section>
+
+        <!-- ТИТУЛ ТАБЛИЦЫ -->
+        <section class="list-head">
+            <div class="list-name"><span class="arrow">⌄</span>Список происшествий <span class="up">⌃</span></div>
+            <div class="notify" id="resultInfo">0 записей</div>
+        </section>
+
+        <!-- ДВУХЪЯРУСНАЯ ТАБЛИЦА -->
+        <section class="table-wrap" id="tableWrap">
+            <table class="table">
+                <colgroup>
+                    <col><col><col><col><col><col><col><col><col><col><col><col><col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Связь</th>
+                        <th>ЧС</th>
+                        <th>Опер.</th>
+                        <th>АРМ</th>
+                        <th>Номер</th>
+                        <th class="sortable" data-sort="date">Дата ↓</th>
+                        <th>Время</th>
+                        <th>Тип происшествия</th>
+                        <th>Постр.</th>
+                        <th>Статус</th>
+                        <th>Адрес</th>
+                        <th>Проверка</th>
+                    </tr>
+                </thead>
+                <tbody id="rows"></tbody>
+            </table>
+        </section>
+
+        <!-- ФУТЕР ПАГИНАЦИИ -->
+        <footer class="bottom">
+            <button class="group" id="groupBtn">выберите группу ⌄</button>
+            <div class="pager">
+                <span>Страница: <b id="page">1</b></span>
+                <span class="arr" id="prev">‹</span>
+                <span class="arr" id="next">›</span>
+                <span>Записей на странице:
+                    <select class="page-size" id="pageSize">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                    </select>
+                </span>
+                <span id="range">0-0 из 0</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ОКНО КАРТОЧКИ: РАСШИРЕННЫЙ ПОИСК -->
+    <div class="overlay" id="searchModal">
+        <div class="modal">
+            <div class="modal-head"><span>Расширенный поиск</span><button class="modal-close" data-close="searchModal">×</button></div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="field"><label>Номер</label><input id="fNumber"></div>
+                    <div class="field"><label>Телефон / связь</label><input id="fPhone"></div>
+                    <div class="field"><label>Дата от</label><input id="fDateFrom" type="date"></div>
+                    <div class="field"><label>Дата до</label><input id="fDateTo" type="date"></div>
+                    <div class="field"><label>Время от</label><input id="fTimeFrom" type="time"></div>
+                    <div class="field"><label>Время до</label><input id="fTimeTo" type="time"></div>
+                    <div class="field"><label>Тип происшествия</label><select id="fType"><option value="">Все типы</option></select></div>
+                    <div class="field"><label>Статус</label><select id="fStatus"><option value="">Все статусы</option><option>Отработана</option><option>Завершена</option><option>Проверена</option><option>В работе</option></select></div>
+                    <div class="field"><label>Оператор</label><input id="fOperator"></div>
+                    <div class="field"><label>Адрес</label><input id="fAddress"></div>
+                    <div class="field full"><label>Описание / заявитель</label><input id="fText"></div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn" data-close="searchModal">Отмена</button>
+                <button class="btn" id="clearFilters">Сбросить</button>
+                <button class="btn primary" id="applyFilters">Найти</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОКНО КАРТОЧКИ: ИНЦИДЕНТ -->
+    <div class="overlay" id="incidentModal">
+        <div class="modal">
+            <div class="modal-head"><span id="incidentTitle">Карточка происшествия</span><button class="modal-close" data-close="incidentModal">×</button></div>
+            <div class="modal-body" id="incidentBody"></div>
+            <div class="modal-actions">
+                <button class="btn" data-close="incidentModal">Закрыть</button>
+                <button class="btn primary" id="saveIncident">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОКНО КАРТОЧКИ: НОВАЯ КАРТОЧКА -->
+    <div class="overlay" id="newModal">
+        <div class="modal">
+            <div class="modal-head"><span>Новая карточка происшествия</span><button class="modal-close" data-close="newModal">×</button></div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="field"><label>Тип происшествия</label><select id="nType"></select></div>
+                    <div class="field"><label>Телефон</label><input id="nPhone" placeholder="Телефон заявителя"></div>
+                    <div class="field"><label>Адрес</label><input id="nAddress"></div>
+                    <div class="field"><label>Заявитель</label><input id="nApplicant"></div>
+                    <div class="field full"><label>Описание</label><textarea id="nDescription"></textarea></div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn" data-close="newModal">Отмена</button>
+                <button class="btn primary" id="createIncident">Создать карточку</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОКНО КАРТОЧКИ: НАСТРОЙКА СТОЛБЦОВ -->
+    <div class="overlay" id="columnModal">
+        <div class="modal small">
+            <div class="modal-head"><span>Выберите что показать</span><button class="modal-close" data-close="columnModal">×</button></div>
+            <div class="modal-body" id="columnBody"></div>
+            <div class="modal-actions"><button class="btn primary" data-close="columnModal">Готово</button></div>
+        </div>
+    </div>
+	
+	<!-- ХАБ ГОЛОСОВОЙ ТЕЛЕФОНИИ AVAYA (МОДАЛЬНОЕ ОКНО ПОВЕРХ ПУЛЬТА) -->
+	<div class="overlay" id="avayaModal">
+		<div class="modal" style="width: 480px; background: #1271b1; border: 1px solid #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+			<div class="modal-head" style="background: transparent; height: 30px; border: none; padding-right: 10px;">
+				<span></span>
+				<button class="modal-close" style="color: #ffffff; opacity: 0.8;" onclick="closeAvayaModal()">×</button>
+			</div>
+			<div class="modal-body text-center p-4 text-white" style="color: #ffffff !important; font-family: Arial, sans-serif;">
+				<h2 style="font-size: 20px; font-weight: bold; margin-bottom: 5px;">Входящий звонок</h2>
+				<div style="font-size: 14px; margin-bottom: 20px; opacity: 0.9;" id="avayaNumber">+7 (499) 550-34-56</div>
+				<button class="btn primary" id="btnAcceptCall" style="background: transparent; border: 2px solid #ffffff; color: #ffffff; padding: 6px 30px; font-size: 13px; font-weight: bold; border-radius: 2px; height: auto;">Принять</button>
+			</div>
+		</div>
+	</div>
+<!-- ПЛАВАЮЩЕЕ ОКНО ТЕКУЩЕГО ЗВОНКА -->
+<div id="avayaWidget"
+     style="
+        display:none;
+        position:fixed;
+        left:24px;
+        top:120px;
+        width:280px;
+        z-index:10001;
+        background:#1271b1;
+        color:#ffffff;
+        border:1px solid #ffffff;
+        border-radius:3px;
+        box-shadow:0 10px 40px rgba(0,0,0,0.5);
+        font-family:Arial,sans-serif;
+        user-select:none;
+     ">
+
+    <div id="avayaWidgetHeader"
+         style="
+            height:32px;
+            display:flex;
+            align-items:center;
+            padding:0 10px;
+            background:#0d5f98;
+            border-bottom:1px solid rgba(255,255,255,0.35);
+            cursor:move;
+         ">
+        <strong style="font-size:11px;">
+            Текущий звонок
+        </strong>
+    </div>
+
+    <div style="
+        padding:14px;
+        text-align:center;
+    ">
+
+        <div id="avayaWidgetNumber"
+             style="
+                font-size:16px;
+                font-weight:bold;
+                margin-bottom:14px;
+             ">
+            Неизвестно
+        </div>
+
+        <button
+            id="btnHangupCall"
+            type="button"
+            style="
+                width:100%;
+                height:32px;
+                background:#c62828;
+                border:1px solid #ffffff;
+                color:#ffffff;
+                font-size:10px;
+                font-weight:bold;
+                border-radius:2px;
+             ">
+            Завершить звонок
+        </button>
+
+    </div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>

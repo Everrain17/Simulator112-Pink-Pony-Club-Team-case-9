@@ -1,0 +1,19 @@
+2026-09-27 17:45:23 | INFO    | admin_tool | req=- | Admin Tool logging initialized: file=D:\repos\112\Simulator112\serv-112\logs\admin_tool.log level=INFO
+2026-09-27 17:45:23 | INFO    | admin_tool.main | req=- | ============================================================
+2026-09-27 17:45:23 | INFO    | admin_tool.main | req=- | Admin Tool starting (cwd=D:\repos\112\Simulator112\serv-112)
+2026-09-27 17:45:23 | INFO    | admin_tool.main | req=- | TLS: enabled=True ca=D:\repos\112\Simulator112\serv-112\certs\ca.crt
+2026-09-27 17:45:26 | INFO    | admin_tool.server | req=- | [server] запуск uvicorn на https://192.168.1.103:8010
+2026-09-27 17:45:26 | INFO    | admin_tool.server | req=- | [server] uvicorn PID=8408
+2026-09-27 17:45:29 | INFO    | admin_tool.login | req=- | backend reachable — login enabled
+2026-09-27 17:45:42 | INFO    | admin_tool.main | req=- | login dialog cancelled — exiting
+2026-09-27 17:45:42 | INFO    | admin_tool.main | req=- | Admin Tool exiting (reason=clean)
+2026-09-27 17:45:46 | INFO    | admin_tool | req=- | Admin Tool logging initialized: file=D:\repos\112\Simulator112\serv-112\logs\admin_tool.log level=INFO
+2026-09-27 17:45:46 | INFO    | admin_tool.main | req=- | ============================================================
+2026-09-27 17:45:46 | INFO    | admin_tool.main | req=- | Admin Tool starting (cwd=D:\repos\112\Simulator112\serv-112)
+2026-09-27 17:45:46 | INFO    | admin_tool.main | req=- | TLS: enabled=True ca=D:\repos\112\Simulator112\serv-112\certs\ca.crt
+2026-09-27 17:45:47 | INFO    | admin_tool.server | req=- | stale pid file (pid=8408 dead) — removing
+2026-09-27 17:45:50 | INFO    | admin_tool.server | req=- | [server] запуск uvicorn на https://192.168.1.103:8010
+2026-09-27 17:45:50 | INFO    | admin_tool.server | req=- | [server] uvicorn PID=17680
+2026-09-27 17:45:52 | INFO    | admin_tool.login | req=- | backend reachable — login enabled
+2026-09-27 17:46:56 | INFO    | admin_tool.main | req=- | login dialog cancelled — exiting
+2026-09-27 17:46:56 | INFO    | admin_tool.main | req=- | Admin Tool exiting (reason=clean)

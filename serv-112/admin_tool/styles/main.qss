@@ -1,0 +1,61 @@
+QWidget { background: {bg}; color: {text}; font-family: "{font_base}"; font-size: {font_size}px; }
+QMainWindow, QDialog { background: {bg}; }
+
+QFrame#Sidebar { background: {panel}; border-right: 1px solid {border}; }
+QFrame#Panel   { background: {panel}; border: 1px solid {border}; border-radius: {radius}px; }
+
+QLabel#Title { font-size: 18px; font-weight: 600; }
+QLabel#Muted { color: {text_muted}; }
+
+QPushButton {
+    background: {panel}; border: 1px solid {border}; border-radius: {radius}px;
+    padding: 8px 14px;
+}
+QPushButton:hover { border-color: {accent}; }
+QPushButton#Primary { background: {accent}; border-color: {accent}; color: {on_accent}; }
+QPushButton#Primary:hover { background: {accent_hover}; }
+
+QPushButton#SecondaryButton {
+    background: transparent;
+    color: {text_muted};
+    border: 1px solid {border};
+    border-radius: {radius}px;
+    padding: 8px 14px;
+}
+QPushButton#SecondaryButton:hover {
+    color: {text};
+    border-color: {accent};
+}
+QPushButton#SecondaryButton:disabled { color: {border}; }
+
+QLineEdit, QComboBox, QSpinBox, QTextEdit {
+    background: {input_bg}; border: 1px solid {border}; border-radius: {radius}px; padding: 6px 8px;
+}
+QLineEdit:focus { border-color: {accent}; }
+
+QTableView {
+    background: {panel}; border: 1px solid {border}; gridline-color: {border};
+}
+QHeaderView::section {
+    background: {panel}; color: {text_muted}; border: none; padding: 6px;
+}
+QTableView::item:selected { background: {accent}; color: {on_accent}; }
+
+/* === Бейджи состояний === */
+
+QLabel#Badge {
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid {border};
+    color: {text_muted};
+    background: transparent;
+}
+QLabel#Badge[state="ok"]    { color: {ok};    border-color: {ok};    }
+QLabel#Badge[state="warn"]  { color: {warn};  border-color: {warn};  }
+QLabel#Badge[state="error"] { color: {error}; border-color: {error}; }
+QLabel#Badge[state="wait"]  { color: {text_muted}; border-color: {border}; }
+
+QLabel#Muted[state="ok"]    { color: {ok}; }
+QLabel#Muted[state="error"] { color: {error}; }

@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка Происшествия — Система-112 Москва</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .additional-services-modal {
+            position: fixed; inset: 0; z-index: 10000; display: none;
+            align-items: center; justify-content: center; background: rgba(0,0,0,0.35);
+        }
+        .additional-services-modal.open { display: flex; }
+        .additional-services-window {
+            width: min(720px, calc(100vw - 40px)); max-height: min(620px, calc(100vh - 60px));
+            background: #f1f5f7; border: 1px solid #7f898e; border-radius: 3px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3); display: flex; flex-direction: column;
+        }
+        .additional-services-header {
+            height: 34px; flex-shrink: 0; background: #333d42; color: #fff;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 10px; font-size: 11px; font-weight: bold;
+        }
+        .additional-services-close {
+            width: 24px; height: 22px; padding: 0; border: 1px solid #667177;
+            background: #424d52; color: #fff; border-radius: 2px; font-size: 15px; line-height: 18px;
+        }
+        .additional-services-close:hover { background: #5b676d; }
+        .additional-services-body { padding: 10px; overflow-y: auto; }
+        .additional-services-hint { margin-bottom: 8px; color: #626a6e; font-size: 9px; }
+        .additional-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+        .additional-service-btn {
+            min-height: 32px; padding: 4px 7px; background: #fff; border: 1px solid #adb5bd;
+            border-radius: 2px; color: #212529; font-size: 9px; text-align: left; cursor: pointer;
+        }
+        .additional-service-btn:hover { background: #e9ecef; border-color: #8c969c; }
+        .additional-service-btn.selected {
+            background: #dbeff8 !important; border-color: #1989bd !important;
+            color: #075477 !important; font-weight: bold;
+        }
+        .additional-service-btn.selected::after { content: " ✓"; float: right; }
+        .additional-services-footer {
+            height: 38px; flex-shrink: 0; border-top: 1px solid #c4c9cc;
+            background: #e1e5e7; display: flex; align-items: center; justify-content: flex-end; padding: 0 10px;
+        }
+        .additional-services-done {
+            height: 26px; padding: 0 16px; background: #087db9; color: #fff;
+            border: 1px solid #0666a3; border-radius: 2px; font-size: 10px; font-weight: bold;
+        }
+        @media (max-width: 800px) { .additional-services-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .dynamic-service-card {
+            background: #ffffff; border: 1px solid #cbd2d4; border-radius: 2px;
+            display: flex; flex-direction: column; overflow: hidden; margin-top: 10px; width: 100%;
+        }
+        .service-card-header {
+            background: #333d42; color: #ffffff; height: 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 8px; font-weight: bold; font-size: 11px;
+        }
+        .service-card-body { padding: 8px; display: flex; flex-direction: column; gap: 6px; background: #f1f5f7; }
+        .checklist-row {
+            display: grid; grid-template-columns: 150px 1fr; gap: 10px; align-items: center;
+            border-bottom: 1px solid #e2e8ea; padding-bottom: 5px; padding-top: 2px;
+        }
+        .checklist-row:last-child { border-bottom: none; }
+        .checklist-label { color: #495057; font-weight: bold; font-size: 10px; white-space: normal; line-height: 1.2; }
+        .checklist-options { display: flex; gap: 4px; flex-wrap: wrap; }
+        .opt-btn {
+            height: 22px; padding: 0 8px; font-size: 10px; background: #ffffff;
+            border: 1px solid #b8c4c7; border-radius: 1px; white-space: nowrap;
+            color: #212529; cursor: pointer; transition: all 0.05s;
+        }
+        .opt-btn:hover { background: #f1f3f4; border-color: #a1a8ab; }
+        .opt-btn.active {
+            background: #087db9 !important; color: #ffffff !important;
+            border-color: #0666a3 !important; font-weight: bold;
+        }
+        .checklist-options textarea {
+            width: 100%; height: 45px; resize: none; font-size: 11px;
+            border: 1px solid #b8c4c7; padding: 4px; background: #ffffff; font-family: Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #d1d5d8; color: #212529; font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px; user-select: none; display: flex; flex-direction: column;
+            height: 100vh; width: 100vw; overflow: hidden;
+        }
+        input, select, textarea, button { font: inherit; outline: none; }
+        button { cursor: pointer; }
+
+        .card-header-arm {
+            background: #e1e5e7; border-bottom: 1px solid #9fa5a8;
+            height: 60px; display: flex; align-items: center; padding: 0; gap: 0; flex-shrink: 0;
+        }
+        .header-action-group {
+            display: flex; flex-direction: column; padding: 0 10px;
+            border-right: 1px solid #b8bcbe; height: 100%; justify-content: center; width: 170px;
+        }
+        .disconnect-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .disconnect-txt { font-size: 12px; font-weight: bold; color: #333; }
+        .sub-buttons-row { display: flex; gap: 4px; }
+        .mini-action-btn {
+            height: 18px; font-size: 8px; background: #fbfbfb;
+            border: 1px solid #b8bcbe; padding: 0 5px; border-radius: 1px;
+        }
+        .phone-section-container {
+            display: flex; align-items: center; height: 100%;
+            border-right: 1px solid #b8bcbe; padding: 0 8px; min-width: 235px; background: #e1e5e7;
+        }
+        .phone-left-icons {
+            display: flex; flex-direction: column; gap: 6px;
+            color: #555c61; font-size: 11px; margin-right: 8px;
+        }
+        .phone-input-body { display: flex; flex-direction: column; flex-grow: 1; }
+        .phone-top-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; height: 12px; }
+        .lbl-blue { font-size: 9px; font-weight: bold; color: #1e457e; text-transform: lowercase; }
+        .lbl-gray { font-size: 9px; font-weight: bold; color: #626a6e; text-transform: lowercase; }
+        .meta-right-icons { display: flex; gap: 4px; color: #555c61; font-size: 9px; cursor: pointer; }
+        .phone-mask-field {
+            height: 24px; width: 100%; border: 1px solid #a1a8ab; padding: 0 6px;
+            font-size: 13px; font-weight: bold; font-family: Arial, sans-serif; border-radius: 1px;
+        }
+        .phone-mask-field.color-blue { color: #1a569b; border-bottom: 2px solid #1a569b; }
+        .phone-mask-field.color-gray { color: #555c61; }
+        .input-with-badge { position: relative; width: 100%; }
+        .inner-input-badge {
+            position: absolute; right: 4px; top: 4px; height: 16px; background: #ffffff;
+            border: 1px solid #b8bcbe; font-size: 7px; padding: 0 3px;
+            display: flex; align-items: center; color: #777; font-weight: bold;
+        }
+        .meta-incident-info {
+            margin-left: auto; padding: 0 15px; font-size: 10px; line-height: 1.3;
+            color: #2c3235; border-right: 1px solid #b8bcbe; height: 100%;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .text-secondary-dim { color: #626a6e; font-size: 9px; }
+        .card-timer-block {
+            background: #1a1d20; color: #ffffff; height: 100%; width: 95px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-family: monospace; border-left: 1px solid #9fa5a8; margin-right: -10px;
+        }
+        .timer-val { font-size: 18px; font-weight: bold; color: #00ff41; line-height: 1.1; }
+        .timer-lbl-row { display: flex; gap: 8px; font-size: 7px; color: #adb5bd; margin-top: 3px; text-transform: lowercase; }
+
+        .card-main-workspace { display: flex; flex: 1; min-height: 0; background: #e9ecef; }
+        .workspace-left-panel { width: 48%; border-right: 1px solid #b4b9be; display: flex; flex-direction: column; }
+        .applicant-row {
+            height: 36px; background: #e2e6e8; border-bottom: 1px solid #b4b9be;
+            display: flex; align-items: center; padding: 0 10px; gap: 8px;
+        }
+        .applicant-row input { height: 24px; border: 1px solid #adb5bd; padding: 0 6px; width: 60%; }
+        .applicant-row select { height: 24px; border: 1px solid #adb5bd; width: 30%; }
+        .address-grid-box {
+            background: #f8f9fa; padding: 12px; display: grid;
+            grid-template-columns: repeat(4, 1fr); gap: 8px;
+            border-bottom: 1px solid #b4b9be; position: relative;
+        }
+        .address-title {
+            grid-column: 1 / -1; font-weight: bold; color: #495057;
+            border-bottom: 1px solid #dee2e6; padding-bottom: 3px;
+            display: flex; justify-content: space-between;
+        }
+        .addr-field { display: flex; flex-direction: column; gap: 3px; }
+        .addr-field label { font-size: 8px; color: #6c757d; }
+        .addr-field input, .addr-field select {
+            height: 22px; border: 1px solid #ced4da; padding: 0 4px; background: #ffffff;
+        }
+        .addr-full { grid-column: 1 / -1; }
+        .btn-clear-addr {
+            height: 22px; padding: 0 8px; background: #fff;
+            border: 1px solid #ced4da; font-size: 9px;
+        }
+        .description-textarea-wrap {
+            flex: 1; display: flex; flex-direction: column; padding: 10px; background: #ffffff;
+        }
+        .desc-lbl-box { display: flex; justify-content: space-between; color: #6c757d; font-size: 9px; margin-bottom: 4px; }
+        .description-textarea-wrap textarea {
+            flex: 1; border: 1px solid #ced4da; resize: none;
+            padding: 8px; font-size: 12px; line-height: 1.4; background: #fafafa;
+        }
+        .workspace-right-panel {
+            width: 52%; padding: 12px; display: flex; flex-direction: column;
+            gap: 10px; overflow-y: auto; background: #e2e6e8;
+        }
+        .buttons-status-bar { display: flex; gap: 4px; }
+        .status-btn {
+            flex: 1; height: 26px; background: #f8f9fa;
+            border: 1px solid #adb5bd; font-size: 9px; border-radius: 2px;
+        }
+        .status-btn.alert-btn { background: #fff3f3; color: #dc3545; border-color: #f5c2c7; }
+        .classifier-select-box {
+            display: flex; flex-direction: column; gap: 4px;
+            background: #ffffff; padding: 10px; border: 1px solid #adb5bd; border-radius: 3px;
+        }
+        .classifier-select-box label { font-weight: bold; color: #495057; font-size: 10px; }
+        .classifier-main-select {
+            height: 28px; border: 1px solid #ced4da; width: 100%;
+            font-size: 12px; color: #212529; font-weight: bold; background-color: #fff3cd;
+        }
+        .quick-types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+        .type-tile {
+            height: 28px; background: #f8f9fa; border: 1px solid #ced4da; border-radius: 2px;
+            font-size: 9px; font-weight: 500; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 2px; transition: all 0.1s;
+        }
+        .type-tile:hover { background: #e9ecef; border-color: #adb5bd; }
+        .type-tile.selected {
+            background: #0d6efd !important; color: #ffffff !important;
+            border-color: #0a58ca !important; font-weight: bold;
+        }
+        .card-footer-toolbar {
+            height: 38px; background: #ef632e; border-top: 1px solid #d75627;
+            display: flex; align-items: center; padding: 0 10px; gap: 6px; flex-shrink: 0;
+        }
+        .footer-badge { background: #d75627; color: #ffffff; padding: 4px 8px; font-weight: bold; border-radius: 2px; }
+        .btn-footer-action {
+            height: 26px; padding: 0 12px; background: #ffffff;
+            border: 1px solid #ced4da; border-radius: 2px; font-size: 10px; font-weight: bold; color: #212529;
+        }
+        .btn-footer-save {
+            background: #2e7d32; color: #ffffff; border: 1px solid #1e5a22;
+            margin-left: auto; height: 28px; padding: 0 20px;
+            font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body class="arm-body">
+    <header class="card-header-arm">
+        <div class="header-action-group">
+            <div class="disconnect-row">
+                <i class="bi bi-telephone-x-fill text-dark fs-5"></i>
+                <span class="disconnect-txt">Отключение</span>
+            </div>
+            <div class="sub-buttons-row">
+                <button class="mini-action-btn">записи звонков</button>
+                <button class="mini-action-btn">список SMS</button>
+            </div>
+        </div>
+        <div class="phone-section-container">
+            <div class="phone-left-icons">
+                <i class="bi bi-telephone-fill"></i>
+                <i class="bi bi-chat-left-text-fill"></i>
+            </div>
+            <div class="phone-input-body">
+                <div class="phone-top-meta">
+                    <span class="lbl-blue">АОН</span>
+                    <div class="meta-right-icons">
+                        <i class="bi bi-info-circle-fill"></i>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <i class="bi bi-globe"></i>
+                    </div>
+                </div>
+                <input type="text" class="phone-mask-field color-blue" placeholder="+7 (   )   -  -  ">
+            </div>
+        </div>
+        <div class="phone-section-container">
+            <div class="phone-left-icons">
+                <i class="bi bi-telephone-fill"></i>
+                <i class="bi bi-chat-left-text-fill"></i>
+            </div>
+            <div class="phone-input-body">
+                <div class="phone-top-meta">
+                    <span class="lbl-gray">предоставленный</span>
+                    <div class="meta-right-icons"><i class="bi bi-globe"></i></div>
+                </div>
+                <div class="input-with-badge">
+                    <input type="text" class="phone-mask-field color-gray" placeholder="+7 (   )   -  -  ">
+                    <span class="inner-input-badge">АОН</span>
+                </div>
+            </div>
+        </div>
+        <div class="phone-section-container">
+            <div class="phone-left-icons">
+                <i class="bi bi-telephone-fill"></i>
+                <i class="bi bi-chat-left-text-fill"></i>
+            </div>
+            <div class="phone-input-body">
+                <div class="phone-top-meta">
+                    <span class="lbl-gray">телефон на месте</span>
+                    <div class="meta-right-icons"><i class="bi bi-globe"></i></div>
+                </div>
+                <div class="input-with-badge">
+                    <input type="text" class="phone-mask-field color-gray" placeholder="+7 (   )   -  -  ">
+                    <span class="inner-input-badge">АОН</span>
+                </div>
+            </div>
+        </div>
+        <div class="meta-incident-info">
+            <strong id="incident-meta-title">Происшествие</strong><br>
+            <span class="text-secondary-dim" id="incident-meta-details">Загрузка данных звонка...<br>Опер.: АРМ 007, УМЦ 01</span>
+        </div>
+        <div class="card-timer-block">
+            <span class="timer-val" id="timer-display">00:00</span>
+            <div class="timer-lbl-row">
+                <span>минут</span>
+                <span>секунд</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="card-main-workspace">
+        <div class="workspace-left-panel">
+            <div class="applicant-row">
+                <input type="text" id="applicant-name" placeholder="Фамилия и имя заявителя...">
+                <select id="applicant-status">
+                    <option value="">выберите статус...</option>
+                    <option>Заявитель</option>
+                    <option>Пострадавший</option>
+                    <option>Очевидец</option>
+                    <option>Проходящий мимо</option>
+                </select>
+            </div>
+            <div class="address-grid-box">
+                <div class="address-title">
+                    <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Адрес происшествия</span>
+                    <span class="text-primary font-monospace">Москва</span>
+                </div>
+                <div class="addr-field"><label>Страна</label><input type="text" value="Россия" disabled></div>
+                <div class="addr-field"><label>Субъект РФ</label><input type="text" value="Москва" disabled></div>
+                <div class="addr-field"><label>Населенный пункт</label><input type="text" value="Москва" disabled></div>
+                <div class="addr-field"><label>Округ</label><input type="text" id="addr-district"></div>
+                <div class="addr-field"><label>Район</label><input type="text" id="addr-area"></div>
+                <div class="addr-field addr-full"><label>Улица</label><input type="text" id="addr-street"></div>
+                <div class="addr-field"><label>Дом/Вл</label><input type="text" id="addr-house"></div>
+                <div class="addr-field"><label>Корпус</label><input type="text" id="addr-building"></div>
+                <div class="addr-field"><label>Стр/Сор</label><input type="text" id="addr-structure"></div>
+                <div class="addr-field"><label>Квартира/Офис</label><input type="text" id="addr-apartment"></div>
+                <div class="addr-field"><label>Подъезд</label><input type="text" id="addr-entrance"></div>
+                <div class="addr-field"><label>Этаж</label><input type="text" id="addr-floor"></div>
+                <div class="addr-field"><label>Код подъезда</label><input type="text" id="addr-entrance-code"></div>
+                <div class="addr-field addr-full"><label>Описательный адрес / Ориентиры на месте</label><input type="text" id="addr-description"></div>
+                <button class="btn-clear-addr" onclick="clearAddressForm()">очистить адрес</button>
+            </div>
+            <div class="description-textarea-wrap">
+                <div class="desc-lbl-box">
+                    <span>Описание со слов заявителя:</span>
+                    <span id="char-counter">0 / 1999</span>
+                </div>
+                <textarea id="incident-desc-field" maxlength="1999" oninput="updateCharCounter()">Геннадий Горин сообщает о сильном задымлении.</textarea>
+            </div>
+        </div>
+
+        <div class="workspace-right-panel">
+            <div class="buttons-status-bar">
+                <button class="status-btn alert-btn">Пострадавшие</button>
+                <button class="status-btn alert-btn">Нет на месте / Отказ от скорой</button>
+                <button class="status-btn alert-btn">Нет доступа / Заблокированы</button>
+                <button class="status-btn">нет контакта</button>
+                <button class="status-btn">срыв звонка</button>
+            </div>
+            <div class="classifier-select-box">
+                <label>Классификатор происшествия (Выберите тип или введите):</label>
+                <select id="main-classifier" class="classifier-main-select" onchange="handleClassifierChange()">
+                    <option value="">-- Выберите тип происшествия --</option>
+                </select>
+            </div>
+            <div class="quick-types-grid" id="tiles-container"></div>
+            <div class="dynamic-service-card" id="service-card-container" style="margin-top: 10px;">
+                <div class="service-card-header">
+                    <span id="service-card-title">Происшествие</span>
+                </div>
+                <div class="service-card-body" id="checklist-fields-body" style="padding: 8px; background: #ffffff; border: 1px solid #b8c4c7; border-top: none;"></div>
+            </div>
+            <div style="background: #ffffff; padding: 10px; border: 1px solid #adb5bd; border-radius: 3px; margin-top: 10px;">
+                <label style="font-weight: bold; color: #495057; font-size: 10px; display: block; margin-bottom: 8px;">Службы:</label>
+                <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                    <button class="status-btn" style="flex: 0 0 auto; min-width: 60px;">101</button>
+                    <button class="status-btn" style="flex: 0 0 auto; min-width: 60px;">102</button>
+                    <button class="status-btn" style="flex: 0 0 auto; min-width: 60px;">103</button>
+                    <button class="status-btn" style="flex: 0 0 auto; min-width: 60px;">104</button>
+                    <button class="status-btn" style="flex: 0 0 auto; min-width: 120px;">ЦОДД / добавить службу</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="additional-services-modal" class="additional-services-modal">
+        <div class="additional-services-window">
+            <div class="additional-services-header">
+                <span>Дополнительные службы</span>
+                <button type="button" class="additional-services-close" id="additional-services-close">×</button>
+            </div>
+            <div class="additional-services-body">
+                <div class="additional-services-hint">
+                    Выберите необходимые дополнительные службы. Службы 101, 102, 103 и 104
+                    находятся непосредственно в карточке и здесь не отображаются.
+                </div>
+                <div id="additional-services-grid" class="additional-services-grid"></div>
+            </div>
+            <div class="additional-services-footer">
+                <button type="button" class="additional-services-done" id="additional-services-done">Готово</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="card-footer-toolbar">
+        <div class="footer-badge">ЕКП</div>
+        <button class="btn-footer-action">сохранить карточку</button>
+        <button class="btn-footer-save" onclick="saveCurrentCard()">сохранить</button>
+    </footer>
+
+    <script src="checklists.js"></script>
+    <script>
+    "use strict";
+
+    const API_BASE = window.location.origin;
+    const urlParams = new URLSearchParams(window.location.search);
+    const CALL_ID = urlParams.get("callId") || "CALL-UNKNOWN";
+    const STUDENT_ID = urlParams.get("studentId") || "operator_227";
+    const STARTED_AT = urlParams.get("startedAt") || "";
+    const INCIDENT_NUMBER = urlParams.get("incidentNumber") || "";
+    const CALLER_PHONE = urlParams.get("callerPhone") || "";
+    const SESSION_ID = urlParams.get("sessionId") ? Number(urlParams.get("sessionId")) : null;
+    const DRAFT_STORAGE_KEY = `arm112_card_draft_${CALL_ID}_${STARTED_AT}`;
+    const PYTHON_API_BASE = window.SYSTEM112_PYTHON_API_BASE || `https://${window.location.hostname}:8010/api/v1`;
+
+    // Константы для дополнительных служб
+    const ADDITIONAL_SERVICE_ORDER = [
+        "ANTITERROR", "MOSLIFT", "DEPT_ZHKH", "TSOMP", "MOSVODOCANAL",
+        "ZODD", "AUTOROADS", "GORMOST", "MOEK", "MOESK", "MGTS",
+        "METRO", "MOSGORTRANS", "MOSCOLLECTOR", "MOSVODOSTOK", "MSPPN",
+        "DEPECO", "DEP_TSZN", "RZD"
+    ];
+
+    function getAdditionalServiceLabel(serviceCode) {
+        const labels = {
+            "ANTITERROR": "Антитеррор", "MOSLIFT": "Мослифт", "DEPT_ZHKH": "Департамент ЖКХ",
+            "TSOMP": "ЦОДД / транспорт", "MOSVODOCANAL": "Мосводоканал", "ZODD": "ЦОДД",
+            "AUTOROADS": "Автомобильные дороги", "GORMOST": "Гормост", "MOEK": "МОЭК",
+            "MOESK": "МОЭСК", "MGTS": "МГТС", "METRO": "Метрополитен",
+            "MOSGORTRANS": "Мосгортранс", "MOSCOLLECTOR": "Москоллектор", "MOSVODOSTOK": "Мосводосток",
+            "MSPPN": "МСППН", "DEPECO": "Департамент природопользования",
+            "DEP_TSZN": "Департамент труда и соцзащиты", "RZD": "РЖД"
+        };
+        return labels[serviceCode] || serviceCode;
+    }
+
+    let runtimeClassifierCatalog = { schemaVersion: 1, incidentTypes: [], services: [] };
+
+    function normalizeIncidentTypeName(typeName) {
+        return String(typeName || "").replace(/^\d+\.\s*/, "").trim();
+    }
+
+    function getIncidentTypeDefinition(value) {
+        const normalized = normalizeIncidentTypeName(value);
+        return (runtimeClassifierCatalog.incidentTypes || []).find(item =>
+            String(item.code || "") === normalized ||
+            normalizeIncidentTypeName(item.name) === normalized
+        ) || null;
+    }
+
+    function getServiceDefinition(value) {
+        const text = String(value ?? "").trim();
+        if (!text) return null;
+        return (runtimeClassifierCatalog.services || []).find(item =>
+            String(item.code || "").toUpperCase() === text.toUpperCase() ||
+            String(item.dispatchCode || "") === text ||
+            String(item.name || "").toUpperCase() === text.toUpperCase()
+        ) || null;
+    }
+
+    function normalizeServiceName(value) {
+        const definition = getServiceDefinition(value);
+        if (definition?.code) return definition.code;
+        const text = String(value ?? "").trim();
+        return text ? text.toUpperCase() : null;
+    }
+
+    const cardState = {
+        version: 3, callId: CALL_ID, studentId: STUDENT_ID,
+        applicant: { name: "", status: "" },
+        phones: { aon: CALLER_PHONE, provided: "", onsite: "" },
+        address: { district: "", area: "", street: "", house: "", building: "", structure: "", apartment: "", entrance: "", floor: "", entranceCode: "", description: "" },
+        description: "",
+        classifier: { selectedType: "", ekpCode: "", ekpName: "" },
+        flags: { casualties: false, ambulanceRefusal: false, blockedAccess: false, noContact: false, callBreak: false },
+        checklist: {},
+        services: { selected: [], required: [], manual: [] }
+    };
+
+    let cardContext = { call: null, incident: null, serverServices: new Set(), engineClassifier: { ekpCode: "", ekpName: "" } };
+    const selectedServices = new Set();
+    const requiredServices = new Set();
+    const manualServices = new Set();
+    const serviceReasons = new Map();
+    let isSavingCard = false;
+    let suppressDraftSave = false;
+
+    function addServiceReason(service, reason, required = false) {
+        const normalized = normalizeServiceName(service);
+        if (!normalized || !reason) return;
+        if (!serviceReasons.has(normalized)) serviceReasons.set(normalized, new Set());
+        serviceReasons.get(normalized).add(reason);
+        selectedServices.add(normalized);
+        if (required) requiredServices.add(normalized);
+        syncServiceState();
+    }
+
+    function removeServiceReason(service, reason) {
+        const normalized = normalizeServiceName(service);
+        if (!normalized) return;
+        const reasons = serviceReasons.get(normalized);
+        if (!reasons) return;
+        reasons.delete(reason);
+        if (reasons.size === 0) {
+            serviceReasons.delete(normalized);
+            if (!manualServices.has(normalized)) {
+                selectedServices.delete(normalized);
+                requiredServices.delete(normalized);
+            }
+        } else {
+            const hasRequired = [...reasons].some(r => r.startsWith("engine:") || r.startsWith("classifier:") || r.startsWith("checklist:") || r.startsWith("flag:"));
+            if (!hasRequired) requiredServices.delete(normalized);
+        }
+        syncServiceState();
+    }
+
+    function syncServiceState(saveDraft = true) {
+        cardState.services.selected = [...selectedServices];
+        cardState.services.required = [...requiredServices];
+        cardState.services.manual = [...manualServices];
+        updateServiceButtons();
+        if (saveDraft && !suppressDraftSave) saveDraftLocally();
+    }
+
+    function removeReasonsByPrefix(prefix) {
+        const removals = [];
+        for (const [service, reasons] of serviceReasons.entries()) {
+            for (const reason of [...reasons]) {
+                if (reason.startsWith(prefix)) removals.push([service, reason]);
+            }
+        }
+        removals.forEach(([service, reason]) => removeServiceReason(service, reason));
+    }
+
+    function toggleManualService(service) {
+        const normalized = normalizeServiceName(service);
+        if (!normalized) return;
+        if (requiredServices.has(normalized)) return;
+        if (manualServices.has(normalized)) {
+            manualServices.delete(normalized);
+            removeServiceReason(normalized, "manual");
+        } else {
+            manualServices.add(normalized);
+            addServiceReason(normalized, "manual", false);
+        }
+        syncServiceState();
+    }
+
+    function applyFixedClassifierService(classifierType) {
+        removeReasonsByPrefix("classifier:");
+        const definition = getIncidentTypeDefinition(classifierType);
+        if (definition?.mainService) {
+            addServiceReason(definition.mainService, `classifier:${definition.code}`, true);
+        }
+        syncServiceState();
+    }
+
+    function applyClassifierRules(type) {
+        applyFixedClassifierService(type);
+        syncServiceState();
+    }
+
+    function extractFixedServicesFromText(text) {
+        const result = new Set();
+        const source = String(text || "");
+        (runtimeClassifierCatalog.services || []).forEach(service => {
+            const dispatchCode = service.dispatchCode;
+            if (dispatchCode && new RegExp(`\\b${dispatchCode}\\b`).test(source)) {
+                result.add(service.code);
+            }
+        });
+        return [...result];
+    }
+
+function getChecklistRuleMap(type, templateKey) {
+    const maps = [];
+    // Нормализуем Service101 → 101
+    let normalizedType = type;
+    if (normalizedType.startsWith("Service")) {
+        normalizedType = normalizedType.replace("Service", "");
+    }
+    if (typeof CHECKLIST_SERVICE_RULES !== "undefined" && CHECKLIST_SERVICE_RULES) {
+        if (CHECKLIST_SERVICE_RULES[normalizedType]) maps.push(CHECKLIST_SERVICE_RULES[normalizedType]);
+        if (templateKey && CHECKLIST_SERVICE_RULES[templateKey] && CHECKLIST_SERVICE_RULES[templateKey] !== CHECKLIST_SERVICE_RULES[normalizedType]) {
+            maps.push(CHECKLIST_SERVICE_RULES[templateKey]);
+        }
+    }
+    return maps;
+}
+
+    function applyChecklistServiceRules(templateKey, label, value) {
+	    let type = normalizeIncidentTypeName(cardState.classifier.selectedType);
+    // Нормализуем Service101 → 101, Service102 → 102 и т.д.
+    if (type.startsWith("Service")) {
+        type = type.replace("Service", "");
+    }
+    const reason = `checklist:${templateKey}:${label}`;
+
+
+        for (const [service, reasons] of [...serviceReasons.entries()]) {
+            if (reasons.has(reason)) {
+                reasons.delete(reason);
+                if (reasons.size === 0) {
+                    serviceReasons.delete(service);
+                    if (!manualServices.has(service)) {
+                        selectedServices.delete(service);
+                        requiredServices.delete(service);
+                    }
+                }
+            }
+        }
+
+        const ruleMaps = getChecklistRuleMap(type, templateKey);
+        for (const ruleMap of ruleMaps) {
+            const labelRules = ruleMap?.[label];
+            if (!labelRules) continue;
+            const rule = labelRules[value];
+            if (!rule) continue;
+            if (Array.isArray(rule)) {
+                rule.forEach(serviceCode => {
+                    const service = normalizeServiceName(serviceCode);
+                    if (!service) return;
+                    if (!serviceReasons.has(service)) serviceReasons.set(service, new Set());
+                    serviceReasons.get(service).add(reason);
+                    selectedServices.add(service);
+                    requiredServices.add(service);
+                });
+            }
+        }
+
+        const servicesFromText = extractFixedServicesFromText(value);
+        servicesFromText.forEach(service => {
+            if (!serviceReasons.has(service)) serviceReasons.set(service, new Set());
+            serviceReasons.get(service).add(reason);
+            selectedServices.add(service);
+            requiredServices.add(service);
+        });
+
+        cardState.services.selected = [...selectedServices];
+        cardState.services.required = [...requiredServices];
+        cardState.services.manual = [...manualServices];
+        updateServiceButtons();
+        if (!suppressDraftSave) saveDraftLocally();
+    }
+
+    function applyFlagRules() {
+        removeServiceReason("AMBULANCE", "flag:casualties");
+        if (cardState.flags.casualties) {
+            addServiceReason("AMBULANCE", "flag:casualties", true);
+        }
+        syncServiceState();
+    }
+
+    function installRuntimeStyles() {
+        if (document.getElementById("arm112-runtime-styles")) return;
+        const style = document.createElement("style");
+        style.id = "arm112-runtime-styles";
+        style.textContent = `
+            .service-btn { position: relative; }
+            .service-btn.service-selected { background: #dbeff8 !important; border-color: #1989bd !important; color: #075477 !important; font-weight: 700 !important; }
+            .service-btn.service-required { background: #ffe1cf !important; border-color: #ee6a35 !important; color: #91360f !important; font-weight: 700 !important; cursor: not-allowed !important; }
+            .service-btn.service-required.service-selected { background: #ffd4b5 !important; }
+            .type-tile.selected { font-weight: 700 !important; }
+            .opt-btn.active { font-weight: 700 !important; }
+            .action-state-active { outline: 2px solid #1688bb !important; font-weight: 700 !important; }
+            .service-btn.service-required::after { content: " ✓"; font-weight: 900; }
+        `;
+        document.head.appendChild(style);
+    }
+
+    function initServiceButtons() {
+        document.querySelectorAll(".status-btn").forEach(button => {
+            const text = button.textContent.trim();
+            const service = getServiceDefinition(text.split("—")[0].trim()) || getServiceDefinition(text);
+            if (!service) return;
+            button.type = "button";
+            button.dataset.service = service.code;
+            button.classList.add("service-btn");
+            button.onclick = () => toggleManualService(service.code);
+        });
+        updateServiceButtons();
+    }
+
+    function updateServiceButtons() {
+        document.querySelectorAll(".service-btn").forEach(button => {
+            const service = button.dataset.service;
+            if (!service) return;
+            const selected = selectedServices.has(service);
+            const required = requiredServices.has(service);
+            button.classList.toggle("service-selected", selected);
+            button.classList.toggle("service-required", required);
+            button.disabled = required;
+            if (required) button.title = "Служба обязательна";
+            else if (selected) button.title = "Служба выбрана";
+            else button.title = "Выбрать службу";
+        });
+    }
+
+    function initActionButtons() {
+        const mapping = {
+            "Пострадавшие": "casualties",
+            "Нет на месте / Отказ от скорой": "ambulanceRefusal",
+            "Нет доступа / Заблокированы": "blockedAccess",
+            "нет контакта": "noContact",
+            "срыв звонка": "callBreak"
+        };
+        document.querySelectorAll(".buttons-status-bar .status-btn").forEach(button => {
+            const key = mapping[button.textContent.trim()];
+            if (!key) return;
+            button.type = "button";
+            button.dataset.action = key;
+            button.onclick = () => {
+                cardState.flags[key] = !cardState.flags[key];
+                button.classList.toggle("action-state-active", cardState.flags[key]);
+                if (key === "casualties") applyFlagRules();
+                saveDraftLocally();
+            };
+        });
+    }
+
+    function syncSelectToTiles() {
+        const select = document.getElementById("main-classifier");
+        if (!select) return;
+        const selected = normalizeIncidentTypeName(select.value);
+        document.querySelectorAll(".type-tile").forEach(tile => {
+            const tileValue = normalizeIncidentTypeName(tile.dataset.type || tile.textContent);
+            tile.classList.toggle("selected", tileValue === selected);
+        });
+    }
+
+function selectTypeFromTile(type, tileElement) {
+    const cleanType = normalizeIncidentTypeName(type);
+    const select = document.getElementById("main-classifier");
+    if (select) {
+        const option = [...select.options].find(item => normalizeIncidentTypeName(item.value) === cleanType);
+        if (option) select.value = option.value;
+    }
+    cardState.classifier.selectedType = cleanType;
+    document.querySelectorAll(".type-tile").forEach(tile => tile.classList.remove("selected"));
+    if (tileElement) tileElement.classList.add("selected");
+    
+    // Сброс данных при смене классификатора
+    resetChecklistData();
+    
+    renderChecklist();
+    applyClassifierRules(cleanType);
+    saveDraftLocally();
+}
+
+function handleClassifierChange() {
+    const select = document.getElementById("main-classifier");
+    if (!select) return;
+    const type = normalizeIncidentTypeName(select.value);
+    cardState.classifier.selectedType = type;
+    syncSelectToTiles();
+    
+    // Сброс данных при смене классификатора
+    resetChecklistData();
+    
+    renderChecklist();
+    applyClassifierRules(type);
+    saveDraftLocally();
+}
+
+function resetChecklistData() {
+    // Очищаем все данные чеклиста
+    cardState.checklist = {};
+    
+    // Сбрасываем все выбранные кнопки в UI
+    document.querySelectorAll("#checklist-fields-body .opt-btn.active").forEach(btn => {
+        btn.classList.remove("active");
+    });
+    document.querySelectorAll("#checklist-fields-body textarea").forEach(textarea => {
+        textarea.value = "";
+    });
+    
+    // Очищаем правила служб, добавленные из чеклиста
+    const checklistPrefix = "checklist:";
+    for (const [service, reasons] of [...serviceReasons.entries()]) {
+        for (const reason of [...reasons]) {
+            if (reason.startsWith(checklistPrefix)) {
+                removeServiceReason(service, reason);
+            }
+        }
+    }
+    
+    // Сбрасываем состояние служб
+    selectedServices.clear();
+    requiredServices.clear();
+    manualServices.clear();
+    serviceReasons.clear();
+    
+    syncServiceState(false);
+}
+
+    async function loadRuntimeClassifier() {
+        const response = await fetch(`${PYTHON_API_BASE}/runtime/classifier`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Не удалось загрузить канонический классификатор: HTTP ${response.status}`);
+        const data = await response.json();
+        runtimeClassifierCatalog = {
+            schemaVersion: data.schemaVersion || 1,
+            incidentTypes: Array.isArray(data.incidentTypes) ? data.incidentTypes : [],
+            services: Array.isArray(data.services) ? data.services : []
+        };
+        return runtimeClassifierCatalog;
+    }
+
+    function initClassifier() {
+        const select = document.getElementById("main-classifier");
+        const tiles = document.getElementById("tiles-container");
+
+        // Сортируем: 101, 102, 103, 104 всегда первые
+        const priorityCodes = ["101", "102", "103", "104", "Service101", "Service102", "Service103", "Service104"];
+        const orderedTypes = [...(runtimeClassifierCatalog.incidentTypes || [])].sort((a, b) => {
+            const ai = priorityCodes.indexOf(String(a.code || ""));
+            const bi = priorityCodes.indexOf(String(b.code || ""));
+            const ap = ai === -1 ? priorityCodes.length : ai;
+            const bp = bi === -1 ? priorityCodes.length : bi;
+            if (ap !== bp) return ap - bp;
+            return 0;
+        });
+
+        if (select) {
+            select.innerHTML = "";
+            const empty = document.createElement("option");
+            empty.value = "";
+            empty.textContent = "— выберите тип происшествия —";
+            select.appendChild(empty);
+
+            orderedTypes.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.code;
+                option.textContent = item.name || item.code;
+                select.appendChild(option);
+            });
+            select.onchange = handleClassifierChange;
+        }
+
+        if (tiles) {
+            tiles.innerHTML = "";
+            orderedTypes.slice(0, 12).forEach(item => {
+                const tile = document.createElement("button");
+                tile.type = "button";
+                tile.className = "type-tile";
+                tile.dataset.type = item.code;
+                tile.textContent = item.name || item.code;
+                tile.title = item.name || item.code;
+                tile.onclick = () => selectTypeFromTile(item.code, tile);
+                tiles.appendChild(tile);
+            });
+        }
+
+        syncSelectToTiles();
+    }
+
+    function getCurrentTemplateKey() {
+        const type = normalizeIncidentTypeName(cardState.classifier.selectedType);
+        let templateKey = null;
+        if (typeof getChecklistType === "function") {
+            templateKey = getChecklistType(type);
+        }
+        const fixedTemplateMap = {
+            "101": "emergency101", "102": "police", "103": "medical", "104": "gas",
+            "Service101": "emergency101", "Service102": "police", "Service103": "medical", "Service104": "gas"
+        };
+        if (fixedTemplateMap[type] && (!templateKey || typeof allChecklists === "undefined" || !allChecklists[templateKey])) {
+            templateKey = fixedTemplateMap[type];
+        }
+        if (typeof allChecklists !== "undefined" && templateKey && allChecklists[templateKey]) {
+            return templateKey;
+        }
+        if (templateKey) return templateKey;
+        return "default";
+    }
+
+    function getChecklistState(templateKey) {
+        if (!cardState.checklist[templateKey]) cardState.checklist[templateKey] = {};
+        return cardState.checklist[templateKey];
+    }
+
+    function renderChecklist() {
+        const body = document.getElementById("checklist-fields-body");
+        const title = document.getElementById("service-card-title");
+        if (!body) return;
+
+        const type = normalizeIncidentTypeName(cardState.classifier.selectedType);
+        const templateKey = getCurrentTemplateKey();
+        const fields = typeof allChecklists !== "undefined"
+            ? (allChecklists[templateKey] || allChecklists.default || [])
+            : [];
+        const saved = getChecklistState(templateKey);
+
+        if (title) title.textContent = type ? `Происшествие ${type}` : "Происшествие";
+        body.innerHTML = "";
+
+        fields.forEach(field => {
+            const row = document.createElement("div");
+            row.className = "checklist-row";
+            row.dataset.label = field.label;
+
+            const label = document.createElement("div");
+            label.className = "checklist-label";
+            label.textContent = field.label;
+
+            const options = document.createElement("div");
+            options.className = "checklist-options";
+
+            if (field.isTextarea) {
+                const textarea = document.createElement("textarea");
+                textarea.value = saved[field.label] || "";
+                textarea.addEventListener("input", () => {
+                    saved[field.label] = textarea.value;
+                    applyChecklistServiceRules(templateKey, field.label, textarea.value);
+                    saveDraftLocally();
+                });
+                options.appendChild(textarea);
+            } else {
+                (field.options || []).forEach(optionText => {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "opt-btn";
+                    button.textContent = optionText;
+                    if (saved[field.label] === optionText) button.classList.add("active");
+                    button.onclick = () => {
+                        row.querySelectorAll(".opt-btn").forEach(other => other.classList.remove("active"));
+                        button.classList.add("active");
+                        saved[field.label] = optionText;
+                        applyChecklistServiceRules(templateKey, field.label, optionText);
+                        saveDraftLocally();
+                    };
+                    options.appendChild(button);
+                });
+            }
+
+            row.appendChild(label);
+            row.appendChild(options);
+            body.appendChild(row);
+        });
+
+        rebuildChecklistRules(templateKey);
+    }
+
+    function rebuildChecklistRules(templateKey) {
+        const prefix = `checklist:${templateKey}:`;
+        for (const [service, reasons] of [...serviceReasons.entries()]) {
+            for (const reason of [...reasons]) {
+                if (reason.startsWith(prefix)) removeServiceReason(service, reason);
+            }
+        }
+        const saved = getChecklistState(templateKey);
+        Object.entries(saved).forEach(([label, value]) => {
+            if (!value) return;
+            applyChecklistServiceRules(templateKey, label, value);
+        });
+    }
+
+    function collectChecklist() {
+        const result = {};
+        Object.entries(cardState.checklist).forEach(([templateKey, values]) => {
+            result[templateKey] = { ...values };
+        });
+        const templateKey = getCurrentTemplateKey();
+        if (!result[templateKey]) result[templateKey] = {};
+
+        document.querySelectorAll("#checklist-fields-body .checklist-row").forEach(row => {
+            const label = row.dataset.label;
+            if (!label) return;
+            const active = row.querySelector(".opt-btn.active");
+            const textarea = row.querySelector("textarea");
+            if (active) result[templateKey][label] = active.textContent.trim();
+            if (textarea) result[templateKey][label] = textarea.value;
+        });
+
+        if (Object.keys(result[templateKey]).length === 0) delete result[templateKey];
+        return result;
+    }
+
+    function formatRussianPhone(value) {
+        let digits = String(value || "").replace(/\D/g, "");
+        if (digits.startsWith("8")) digits = "7" + digits.slice(1);
+        if (digits.startsWith("9")) digits = "79" + digits.slice(1);
+        if (!digits.startsWith("7")) digits = "7" + digits;
+        digits = digits.slice(0, 11);
+        const local = digits.slice(1);
+        let result = "+7 (";
+        if (local.length > 0) result += local.slice(0, 3);
+        if (local.length >= 3) result += ") ";
+        if (local.length > 3) result += local.slice(3, 6);
+        if (local.length >= 6) result += "-";
+        if (local.length > 6) result += local.slice(6, 8);
+        if (local.length >= 8) result += "-";
+        if (local.length > 8) result += local.slice(8, 10);
+        return result;
+    }
+
+    function initPhoneMasks() {
+        document.querySelectorAll(".phone-mask-field").forEach(input => {
+            input.addEventListener("input", event => {
+                event.target.value = formatRussianPhone(event.target.value);
+                saveDraftLocally();
+            });
+            input.addEventListener("focus", () => { if (!input.value) input.value = "+7 ("; });
+        });
+    }
+
+    function readAddressFromIncident(incident) {
+        const raw = incident?.address || incident?.Address || "";
+        if (!raw) return { street: "", house: "" };
+        const parts = raw.split(",").map(part => part.trim()).filter(Boolean);
+        return {
+            street: parts.length > 1 ? parts.slice(0, -1).join(", ") : parts[0] || "",
+            house: parts.length > 1 ? parts[parts.length - 1] : ""
+        };
+    }
+
+    function collectAddress() {
+        const fields = ["addr-district", "addr-area", "addr-street", "addr-house", "addr-building", "addr-structure", "addr-apartment", "addr-entrance", "addr-floor", "addr-entrance-code", "addr-description"];
+        const result = {};
+        fields.forEach(id => {
+            const element = document.getElementById(id);
+            const key = id.replace("addr-", "");
+            result[key] = element?.value?.trim() || "";
+        });
+        return result;
+    }
+
+    async function loadCardContext() {
+        const response = await fetch(`${PYTHON_API_BASE}/runtime/state`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Ошибка загрузки состояния: HTTP ${response.status}`);
+        const data = await response.json();
+        const calls = data.activeCalls || [];
+        const incidents = data.allIncidents || [];
+        const call = calls.find(c => (c.id || c.Id) === CALL_ID);
+        if (!call) throw new Error(`Звонок ${CALL_ID} не найден в runtime/state`);
+        const incidentId = call.incidentId || call.IncidentId;
+        const incident = incidents.find(item => (item.id || item.Id) === incidentId);
+        if (!incident) throw new Error(`Инцидент ${incidentId} не найден`);
+        cardContext = { call, incident, serverServices: new Set(), engineClassifier: { ekpCode: "", ekpName: "" } };
+        hydrateCardFromEngine();
+        if (cardState.classifier.selectedType) applyClassifierRules(cardState.classifier.selectedType);
+    }
+
+    function hydrateCardFromEngine() {
+        const incident = cardContext.incident;
+        if (!incident) return;
+        const address = readAddressFromIncident(incident);
+        if (!cardState.address.street && address.street) cardState.address.street = address.street;
+        if (!cardState.address.house && address.house) cardState.address.house = address.house;
+    }
+
+    function buildCardPayload() {
+        const phoneInputs = [...document.querySelectorAll(".phone-mask-field")];
+        cardState.applicant.name = document.getElementById("applicant-name")?.value?.trim() || "";
+        cardState.applicant.status = document.getElementById("applicant-status")?.value?.trim() || "";
+        cardState.phones = {
+            aon: phoneInputs[0]?.value?.trim() || "",
+            provided: phoneInputs[1]?.value?.trim() || "",
+            onsite: phoneInputs[2]?.value?.trim() || ""
+        };
+        cardState.address = collectAddress();
+        cardState.description = document.getElementById("incident-desc-field")?.value?.trim() || "";
+        cardState.checklist = collectChecklist();
+
+        return {
+            version: cardState.version, savedAt: new Date().toISOString(),
+            callId: CALL_ID, studentId: STUDENT_ID, sessionId: SESSION_ID,
+            applicant: { ...cardState.applicant },
+            applicantRole: cardState.applicant.status || "Заявитель",
+            phones: { ...cardState.phones },
+            address: { ...cardState.address },
+            description: cardState.description,
+            operatorNotes: cardState.description,
+            classifier: { selectedType: cardState.classifier.selectedType, ekpCode: cardState.classifier.ekpCode, ekpName: cardState.classifier.ekpName },
+            flags: { ...cardState.flags },
+            checklist: { ...cardState.checklist },
+            services: {
+                selected: [...selectedServices], required: [...requiredServices], manual: [...manualServices],
+                reasons: Object.fromEntries([...serviceReasons.entries()].map(([service, reasons]) => [service, [...reasons]]))
+            },
+            engine: { incidentId: cardContext.incident?.id || cardContext.incident?.Id || "" }
+        };
+    }
+
+    function saveDraftLocally() {
+        if (suppressDraftSave) return;
+        try { localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(cardState)); }
+        catch (error) { console.warn("[АРМ CARD] Не удалось сохранить локальный черновик:", error); }
+    }
+
+    function loadDraftLocally() {
+        try {
+            const raw = localStorage.getItem(DRAFT_STORAGE_KEY);
+            if (!raw) return false;
+            const draft = JSON.parse(raw);
+            if (!draft) return false;
+            cardState.applicant = { ...cardState.applicant, ...(draft.applicant || {}) };
+            cardState.phones = { ...cardState.phones, ...(draft.phones || {}) };
+            cardState.address = { ...cardState.address, ...(draft.address || {}) };
+            cardState.description = draft.description || "";
+            cardState.classifier = { ...cardState.classifier, ...(draft.classifier || {}) };
+            const draftClassifier = getIncidentTypeDefinition(cardState.classifier.selectedType);
+            if (draftClassifier) {
+                cardState.classifier.selectedType = draftClassifier.code;
+                cardState.classifier.ekpCode = cardState.classifier.ekpCode || draftClassifier.ekpCode || "";
+                cardState.classifier.ekpName = cardState.classifier.ekpName || draftClassifier.name || "";
+            }
+            cardState.flags = { ...cardState.flags, ...(draft.flags || {}) };
+            cardState.checklist = draft.checklist || {};
+            selectedServices.clear(); requiredServices.clear(); manualServices.clear(); serviceReasons.clear();
+            (draft.services?.manual || []).forEach(service => {
+                const normalized = normalizeServiceName(service);
+                if (normalized) manualServices.add(normalized);
+            });
+            return true;
+        } catch (error) {
+            console.warn("[АРМ CARD] Ошибка чтения локального черновика:", error);
+            return false;
+        }
+    }
+
+    function applyDraftToDom() {
+        const applicantName = document.getElementById("applicant-name");
+        const applicantStatus = document.getElementById("applicant-status");
+        if (applicantName) applicantName.value = cardState.applicant.name;
+        if (applicantStatus) applicantStatus.value = cardState.applicant.status;
+
+        const phoneInputs = [...document.querySelectorAll(".phone-mask-field")];
+        if (phoneInputs[0] && cardState.phones.aon) phoneInputs[0].value = cardState.phones.aon;
+        if (phoneInputs[1] && cardState.phones.provided) phoneInputs[1].value = cardState.phones.provided;
+        if (phoneInputs[2] && cardState.phones.onsite) phoneInputs[2].value = cardState.phones.onsite;
+
+        Object.entries(cardState.address).forEach(([key, value]) => {
+            const input = document.getElementById(`addr-${key}`);
+            if (input && value !== undefined) input.value = value;
+        });
+
+        const description = document.getElementById("incident-desc-field");
+        if (description) description.value = cardState.description;
+
+        const mapping = {
+            "Пострадавшие": "casualties", "Нет на месте / Отказ от скорой": "ambulanceRefusal",
+            "Нет доступа / Заблокированы": "blockedAccess", "нет контакта": "noContact", "срыв звонка": "callBreak"
+        };
+        document.querySelectorAll(".buttons-status-bar .status-btn").forEach(button => {
+            const key = mapping[button.textContent.trim()];
+            if (!key) return;
+            button.classList.toggle("action-state-active", Boolean(cardState.flags[key]));
+        });
+    }
+
+    function updateCharCounter() {
+        const field = document.getElementById("incident-desc-field");
+        const counter = document.getElementById("char-counter");
+        if (!field || !counter) return;
+        counter.textContent = `${field.value.length} / 1999`;
+    }
+
+    function clearAddressForm() {
+        document.querySelectorAll(".address-grid-box input[type='text']").forEach(input => {
+            if (!input.disabled) input.value = "";
+        });
+        cardState.address = { district: "", area: "", street: "", house: "", building: "", structure: "", apartment: "", entrance: "", floor: "", entranceCode: "", description: "" };
+        saveDraftLocally();
+    }
+
+    function formatCardDateTime(isoValue) {
+        if (!isoValue) return "";
+        const date = new Date(isoValue);
+        if (!Number.isFinite(date.getTime())) return "";
+        const pad = value => String(value).padStart(2, "0");
+        return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()} в ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+    }
+
+    function updateCardHeaderMeta() {
+        const title = document.getElementById("incident-meta-title");
+        const details = document.getElementById("incident-meta-details");
+        if (title) title.textContent = `Происшествие ${INCIDENT_NUMBER || CALL_ID}`;
+        if (details) {
+            const started = formatCardDateTime(STARTED_AT);
+            details.innerHTML = `${started ? `Принято ${started}` : "Время звонка не передано"}<br>Опер.: АРМ 007, УМЦ 01`;
+        }
+    }
+
+    function updateCallTimer() {
+        const timer = document.getElementById("timer-display");
+        const container = document.querySelector(".card-timer-block");
+        if (!timer || !container) return;
+
+        let seconds = 0;
+
+        // Способ 1: через window.opener (как было раньше)
+        try {
+            if (window.opener && !window.opener.closed && window.opener.currentCallSecondsCounter !== undefined) {
+                seconds = Number(window.opener.currentCallSecondsCounter) || 0;
+            }
+        } catch (_) {}
+
+        // Способ 2: фоллбэк на STARTED_AT из URL
+        if (seconds === 0 && STARTED_AT) {
+            const startedMs = Date.parse(STARTED_AT);
+            if (Number.isFinite(startedMs)) {
+                seconds = Math.max(0, Math.floor((Date.now() - startedMs) / 1000));
+            }
+        }
+
+        const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
+        const sec = String(seconds % 60).padStart(2, "0");
+        timer.textContent = `${minutes}:${sec}`;
+
+        if (seconds >= 70) {
+            container.style.setProperty("background-color", "#dc3545", "important");
+            container.style.setProperty("color", "#ffffff", "important");
+            container.style.setProperty("border", "1px solid #b21f2d", "important");
+        } else {
+            container.style.removeProperty("background-color");
+            container.style.removeProperty("color");
+            container.style.removeProperty("border");
+        }
+    }
+
+    async function postJson(path, payload, base = API_BASE) {
+        const response = await fetch(`${base}${path}`, {
+            method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload)
+        });
+        const raw = await response.text();
+        let parsed = null;
+        if (raw) { try { parsed = JSON.parse(raw); } catch (_) { parsed = raw; } }
+        if (!response.ok) {
+            let message = "";
+            if (typeof parsed === "string") message = parsed;
+            else if (Array.isArray(parsed?.detail)) message = parsed.detail.map(x => x.msg || JSON.stringify(x)).join("; ");
+            else if (parsed?.detail) message = String(parsed.detail);
+            else if (parsed?.error) message = parsed.error;
+            else if (parsed?.message) message = parsed.message;
+            throw new Error(`${path}: ${message || `HTTP ${response.status}`}`);
+        }
+        return parsed;
+    }
+
+    function buildEvaluationNotes(payload) {
+        const lines = [];
+        if (payload.description) lines.push(`Описание заявителя: ${payload.description}`);
+        if (payload.classifier.selectedType) lines.push(`Классификатор: ${payload.classifier.selectedType}`);
+        const flags = Object.entries(payload.flags).filter(([, value]) => Boolean(value)).map(([key]) => key);
+        if (flags.length) lines.push(`Флаги: ${flags.join(", ")}`);
+        Object.entries(payload.checklist || {}).forEach(([templateKey, values]) => {
+            Object.entries(values || {}).forEach(([label, value]) => {
+                if (value) lines.push(`CHECKLIST [${templateKey}] ${label}: ${value}`);
+            });
+        });
+        if (payload.services.selected.length) lines.push(`Службы: ${payload.services.selected.join(", ")}`);
+        return lines.join("\n");
+    }
+
+    async function saveCurrentCard() {
+        if (isSavingCard) return;
+        const selectedType = normalizeIncidentTypeName(cardState.classifier.selectedType);
+        if (!selectedType) { alert("Не выбран тип происшествия."); return; }
+        if (!CALL_ID || CALL_ID === "CALL-UNKNOWN") { alert("Не найден CallId текущего звонка."); return; }
+
+        isSavingCard = true;
+        const payload = buildCardPayload();
+        payload.evaluationText = buildEvaluationNotes(payload);
+
+        const saveButtons = [document.querySelector(".btn-footer-save"), document.querySelector(".btn-footer-action")].filter(Boolean);
+        saveButtons.forEach(button => { button.disabled = true; button.textContent = "сохранение..."; });
+
+        try {
+            console.log("[АРМ CARD] 1/2 отправка карточки в Python backend");
+            await postJson(`/runtime/calls/${encodeURIComponent(CALL_ID)}/card`, payload, PYTHON_API_BASE);
+            console.log("[АРМ CARD] 2/2 завершение звонка через Python backend");
+            const completed = await postJson(`/runtime/calls/${encodeURIComponent(CALL_ID)}/complete`, {}, PYTHON_API_BASE);
+            console.log("[АРМ CARD] Вызов успешно завершён:", completed);
+
+            localStorage.removeItem(DRAFT_STORAGE_KEY);
+
+            if (window.opener && !window.opener.closed) {
+                window.opener.postMessage({
+                    type: "CARD_SAVED",
+                    data: {
+                        callId: CALL_ID, studentId: STUDENT_ID, classifier: payload.classifier,
+                        address: payload.address, applicant: payload.applicant, applicantRole: payload.applicantRole,
+                        phone: payload.phones.aon, description: payload.description,
+                        flags: payload.flags, checklist: payload.checklist, services: payload.services,
+                        evaluation: completed?.evaluation || null
+                    }
+                }, "*");
+            }
+
+            alert("Карточка сохранена. Разговор продолжается.");
+            setTimeout(() => { try { window.close(); } catch (_) {} }, 50);
+
+        } catch (error) {
+            console.error("[АРМ CARD] Ошибка завершения:", error);
+            alert(`Не удалось завершить звонок.\n\n${error.message}`);
+        } finally {
+            isSavingCard = false;
+            saveButtons.forEach(button => { button.disabled = false; button.textContent = button.classList.contains("btn-footer-save") ? "сохранить" : "сохранить карточку"; });
+        }
+    }
+
+    function closeAdditionalServicesModal() {
+        const modal = document.getElementById("additional-services-modal");
+        if (!modal) return;
+        modal.classList.remove("open");
+    }
+
+    function openAdditionalServicesModal() {
+        const modal = document.getElementById("additional-services-modal");
+        if (!modal) return;
+        renderAdditionalServices();
+        modal.classList.add("open");
+    }
+
+    function toggleAdditionalService(service) {
+        const normalized = normalizeServiceName(service);
+        if (!normalized) return;
+        if (requiredServices.has(normalized)) return;
+        if (manualServices.has(normalized)) {
+            manualServices.delete(normalized);
+            removeServiceReason(normalized, "manual");
+        } else {
+            manualServices.add(normalized);
+            addServiceReason(normalized, "manual", false);
+        }
+        syncServiceState();
+        renderAdditionalServices();
+    }
+
+    function renderAdditionalServices() {
+        const grid = document.getElementById("additional-services-grid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        ADDITIONAL_SERVICE_ORDER.forEach(service => {
+            if (service === "MCHS" || service === "POLICE" || service === "AMBULANCE" || service === "GAS") return;
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "additional-service-btn";
+            const selected = selectedServices.has(service);
+            button.classList.toggle("selected", selected);
+            button.textContent = getAdditionalServiceLabel(service);
+            button.title = service;
+            button.onclick = () => toggleAdditionalService(service);
+            grid.appendChild(button);
+        });
+    }
+
+    function initAdditionalServicesModal() {
+        const modal = document.getElementById("additional-services-modal");
+        if (!modal) return;
+
+        document.querySelectorAll(".workspace-right-panel .status-btn").forEach(button => {
+            if (button.textContent.trim() === "ЦОДД / добавить службу") {
+                button.type = "button";
+                button.onclick = () => openAdditionalServicesModal();
+            }
+        });
+
+        document.getElementById("additional-services-close")?.addEventListener("click", closeAdditionalServicesModal);
+        document.getElementById("additional-services-done")?.addEventListener("click", closeAdditionalServicesModal);
+
+        modal.addEventListener("click", event => { if (event.target === modal) closeAdditionalServicesModal(); });
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && modal.classList.contains("open")) closeAdditionalServicesModal();
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        console.log("[АРМ CARD] Инициализация:", { callId: CALL_ID, studentId: STUDENT_ID });
+
+        installRuntimeStyles();
+
+        try {
+            await loadRuntimeClassifier();
+            initClassifier();
+        } catch (error) {
+            console.error("[АРМ CARD] Не удалось получить канонический классификатор:", error);
+            alert("Не удалось загрузить классификатор с Python backend.\n\n" + error.message);
+            return;
+        }
+
+        initAdditionalServicesModal();
+        initServiceButtons();
+        initActionButtons();
+        initPhoneMasks();
+        loadDraftLocally();
+
+        if (CALLER_PHONE) cardState.phones.aon = CALLER_PHONE;
+
+        try {
+            await loadCardContext();
+        } catch (error) {
+            console.error("[АРМ CARD] Ошибка получения контекста:", error);
+            applyDraftToDom();
+            alert("Не удалось получить данные текущего звонка из ядра.\n\n" + error.message);
+        }
+
+        applyDraftToDom();
+
+        const select = document.getElementById("main-classifier");
+        if (select && cardState.classifier.selectedType) {
+            const desired = normalizeIncidentTypeName(cardState.classifier.selectedType);
+            const option = [...select.options].find(item => normalizeIncidentTypeName(item.value) === desired);
+            if (option) select.value = option.value;
+        }
+
+        renderChecklist();
+        applyClassifierRules(cardState.classifier.selectedType);
+        applyFlagRules();
+        updateServiceButtons();
+        syncSelectToTiles();
+        updateCharCounter();
+        updateCardHeaderMeta();
+        updateCallTimer();
+
+        document.querySelectorAll("input, select, textarea").forEach(element => {
+            element.addEventListener("input", () => {
+                saveDraftLocally();
+                if (element.id === "incident-desc-field") updateCharCounter();
+            });
+            element.addEventListener("change", () => saveDraftLocally());
+        });
+
+        document.querySelector(".btn-footer-action")?.addEventListener("click", saveCurrentCard);
+        setInterval(updateCallTimer, 1000);
+
+        console.log("[АРМ CARD] Инициализация завершена.", cardState);
+    });
+    </script>
+</body>
+</html>

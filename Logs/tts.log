@@ -1,0 +1,575 @@
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [3028]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [18196]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.103:50945 - "WebSocket /stt" [accepted]
+INFO:     connection open
+[СЕРВЕР] Выбранное устройство: cpu
+[TTS] Загрузка Silero v5 с диска...
+TTS модель успешно загружена в Offline режиме!
+[STT] Загрузка Vosk модели из vosk-model-small-ru-0.22...
+STT модель загружена! Микрофон полностью автономен.
+[HTTPS] Сертификат: D:\repos\112\Simulator112\serv-112\certs\server.crt
+[HTTPS] Ключ: D:\repos\112\Simulator112\serv-112\certs\server.key
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[TTS] Синтез: "Что творится, пожар уже горит, а вы спокойно здесь разговариваете!" | Голос: aidar | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:50978 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Балаклавский проспект, двадцать кдва, дом культуры!" | Голос: aidar | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:50978 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Там люди могут задохнуться!" | Голос: aidar | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:50978 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [15996]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.103:51267 - "WebSocket /stt" [accepted]
+INFO:     connection open
+[СЕРВЕР] Выбранное устройство: cpu
+[TTS] Загрузка Silero v5 с диска...
+TTS модель успешно загружена в Offline режиме!
+[STT] Загрузка Vosk модели из vosk-model-small-ru-0.22...
+STT модель загружена! Микрофон полностью автономен.
+[HTTPS] Сертификат: D:\repos\112\Simulator112\serv-112\certs\server.crt
+[HTTPS] Ключ: D:\repos\112\Simulator112\serv-112\certs\server.key
+[STT] WebSocket подключен к пульту
+[TTS] Синтез: "Помогите, горит дом культуры на Балаклавском!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:51467 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Там люди могут быть!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:51467 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Что происходит, не видите ли вы дым?" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:51572 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Помогите!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:51572 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Это дом культуры на Балаклавском, там пожар!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:51572 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+INFO:     192.168.1.103:51953 - "WebSocket /stt" [accepted]
+INFO:     connection open
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [18808]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [8020]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [18632]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [10792]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.103:53580 - "WebSocket /stt" [accepted]
+INFO:     connection open
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [5268]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [7072]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.103:53969 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:53980 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:53988 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:53995 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:54003 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:54073 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:54205 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:54224 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:54236 - "WebSocket /stt" [accepted]
+INFO:     connection open
+[СЕРВЕР] Выбранное устройство: cpu
+[TTS] Загрузка Silero v5 с диска...
+TTS модель успешно загружена в Offline режиме!
+[STT] Загрузка Vosk модели из vosk-model-small-ru-0.22...
+STT модель загружена! Микрофон полностью автономен.
+[HTTPS] Сертификат: D:\repos\112\Simulator112\serv-112\certs\server.crt
+[HTTPS] Ключ: D:\repos\112\Simulator112\serv-112\certs\server.key
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[STT] WebSocket отключен
+[STT] WebSocket подключен к пульту
+[TTS] Синтез: "Что происходит?" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:54250 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Почему так долго?!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:54250 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Дом культуры горит, люди могут погибнуть!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:54250 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Скорее вызывайте помощь!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:54250 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+INFO:     192.168.1.103:54356 - "WebSocket /stt" [accepted]
+INFO:     connection open
+INFO:     192.168.1.103:54444 - "WebSocket /stt" [accepted]
+INFO:     connection open
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [9872]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [15160]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [9400]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.103:54685 - "WebSocket /stt" [accepted]
+INFO:     connection open
+[СЕРВЕР] Выбранное устройство: cpu
+[TTS] Загрузка Silero v5 с диска...
+TTS модель успешно загружена в Offline режиме!
+[STT] Загрузка Vosk модели из vosk-model-small-ru-0.22...
+STT модель загружена! Микрофон полностью автономен.
+[HTTPS] Сертификат: D:\repos\112\Simulator112\serv-112\certs\server.crt
+[HTTPS] Ключ: D:\repos\112\Simulator112\serv-112\certs\server.key
+[STT] WebSocket подключен к пульту
+[TTS] Синтез: "Пожар в доме культуры, люди могут быть внутри!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:54776 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Скорее пришлите помощь!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:54776 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[STT] WebSocket отключен
+[TTS GENERATION ERROR] 'charmap' codec can't encode characters in position 37-41: character maps to <undefined>
+INFO:     127.0.0.1:54812 - "POST /v1/audio/speech HTTP/1.1" 500 Internal Server Error
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [2204]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [6940]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [15884]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [3280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [10564]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [3468]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.1.103:57216 - "WebSocket /stt" [accepted]
+INFO:     connection open
+[СЕРВЕР] Выбранное устройство: cpu
+[TTS] Загрузка Silero v5 с диска...
+TTS модель успешно загружена в Offline режиме!
+[STT] Загрузка Vosk модели из vosk-model-small-ru-0.22...
+STT модель загружена! Микрофон полностью автономен.
+[HTTPS] Сертификат: D:\repos\112\Simulator112\serv-112\certs\server.crt
+[HTTPS] Ключ: D:\repos\112\Simulator112\serv-112\certs\server.key
+[STT] WebSocket подключен к пульту
+[TTS GENERATION ERROR] 'charmap' codec can't encode characters in position 37-41: character maps to <undefined>
+INFO:     127.0.0.1:57274 - "POST /v1/audio/speech HTTP/1.1" 500 Internal Server Error
+[TTS] Синтез: "Что?" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:57311 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "Говорите пояснее!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:57311 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+[TTS] Синтез: "В доме культуры горят стены, люди в панике!" | Голос: baya | Выходной SampleRate: 24000Hz
+INFO:     127.0.0.1:57311 - "POST /v1/audio/speech HTTP/1.1" 200 OK
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [15476]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [2080]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [11572]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========
+
+
+========== START TTS SERVER ==========
+C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\package\package_importer.py:261: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  dtype = storage_type.dtype
+LOG (VoskAPI:ReadDataFiles():model.cc:213) Decoding params beam=10 max-active=3000 lattice-beam=2
+LOG (VoskAPI:ReadDataFiles():model.cc:216) Silence phones 1:2:3:4:5:6:7:8:9:10
+LOG (VoskAPI:RemoveOrphanNodes():nnet-nnet.cc:948) Removed 0 orphan nodes.
+LOG (VoskAPI:RemoveOrphanComponents():nnet-nnet.cc:847) Removing 0 orphan components.
+LOG (VoskAPI:ReadDataFiles():model.cc:248) Loading i-vector extractor from vosk-model-small-ru-0.22/ivector/final.ie
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:183) Computing derived variables for iVector extractor
+LOG (VoskAPI:ComputeDerivedVars():ivector-extractor.cc:204) Done.
+LOG (VoskAPI:ReadDataFiles():model.cc:282) Loading HCL and G from vosk-model-small-ru-0.22/graph/HCLr.fst vosk-model-small-ru-0.22/graph/Gr.fst
+LOG (VoskAPI:ReadDataFiles():model.cc:308) Loading winfo vosk-model-small-ru-0.22/graph/phones/word_boundary.int
+INFO:     Started server process [18504]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8000 (Press CTRL+C to quit)
+
+========== STOP TTS SERVER ==========

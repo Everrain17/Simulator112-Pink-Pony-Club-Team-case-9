@@ -1,0 +1,728 @@
+/* ==========================================================================
+   БАЗОВАЯ СТРУКТУРА СИСТЕМЫ АРМ
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background: #7f8d95;
+    color: #e8ecee;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    user-select: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    min-width: 980px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   ЯРУС 1: ВЕРХНИЙ КОНТЕЙНЕР ШАПКИ
+   ========================================================================== */
+.top {
+    height: 63px;
+    min-height: 63px;
+    display: grid;
+    grid-template-columns: minmax(520px, 54%) minmax(380px, 1fr) 90px;
+    border-bottom: 1px solid #aeb4b7;
+}
+
+.title {
+    background: #ededec;
+    color: #262a2c;
+    border-right: 1px solid #9fa5a8;
+    padding: 5px 13px 0 15px;
+    position: relative;
+}
+
+.title h1 {
+    margin: 0;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -.5px;
+}
+
+/* Отрисовка лупы поиска чистым CSS */
+.title-search, .search-mini {
+    border: 0;
+    background: transparent;
+    position: relative;
+}
+
+.title-search {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.title-search:before, .search-mini:before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #32373a;
+    border-radius: 50%;
+}
+
+.title-search:before { left: 2px; top: 2px; }
+.search-mini:before { left: 3px; top: 3px; border-color: #59646a; }
+
+.title-search:after, .search-mini:after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 2px;
+    background: #32373a;
+    transform: rotate(-45deg);
+}
+
+.title-search:after { left: 14px; top: 15px; }
+.search-mini:after { left: 14px; top: 15px; background: #59646a; }
+
+.advanced {
+    border: 0;
+    background: transparent;
+    color: #737b80;
+    font-size: 9px;
+    padding: 0;
+}
+
+.advanced span {
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.reset {
+    position: absolute;
+    right: 12px;
+    bottom: 5px;
+    height: 20px;
+    width: 53px;
+    border: 1px solid #adb3b6;
+    background: #f6f6f5;
+    color: #7c8387;
+    font-size: 8px;
+}
+
+/* Правый системный блок АРМ */
+.system {
+    min-width: 0;
+    background: #30373d;
+    display: grid;
+    grid-template-columns: 190px 1fr 103px;
+    overflow: hidden;
+}
+
+.system-info {
+    padding: 7px 7px 0 8px;
+    text-align: center;
+    border-right: 1px solid #252b30;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.system-date {
+    font-size: 10px;
+    font-weight: bold;
+    color: #e2e6e7;
+}
+
+.system-user {
+    font-size: 8px;
+    color: #b7c0c4;
+    margin-top: 3px;
+}
+
+.system-user i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #7e888e;
+    border-radius: 50%;
+    font-style: normal;
+    font-size: 7px;
+    margin-left: 2px;
+}
+
+/* Модульное меню (Журнал, Карта, Телефония) */
+.modules {
+    min-width: 0;
+    display: flex;
+    height: 63px;
+    overflow: hidden;
+}
+
+.module {
+    flex: 1;
+    min-width: 38px;
+    border: 0;
+    border-left: 1px solid #252c31;
+    background: #3a4248;
+    color: #aeb7bb;
+    padding: 4px 2px 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.module .ico {
+    font-size: 13px;
+    line-height: 14px;
+    color: #bfc7ca;
+}
+
+.module .txt {
+    font-size: 7px;
+    line-height: 8px;
+    white-space: nowrap;
+}
+
+.module.active {
+    background: #087db9;
+    color: #fff;
+}
+
+.module.active .ico {
+    color: #fff;
+}
+
+/* Цифровые системные часы */
+.clock {
+    background: #1d2226;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 0;
+}
+
+.clock-main {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #f2f3f3;
+}
+
+.clock-sec {
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    font-size: 9px;
+    color: #d1d6d8;
+}
+
+.new-card {
+    height: 63px;
+    border: 1px solid #f38b58;
+    background: #ef632e;
+    color: #fff;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: lowercase;
+}
+
+/* ==========================================================================
+   ЯРУС 2: ОПЕРАТИВНЫЙ ИНСТРУМЕНТАРИЙ ТУМБЛЕРОВ
+   ========================================================================== */
+.subbar {
+    height: 39px;
+    min-height: 39px;
+    background: #dce1e3;
+    border-bottom: 1px solid #aeb6ba;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px 0 15px;
+    color: #58636a;
+}
+
+.sub-left {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-mini {
+    width: 24px;
+    height: 24px;
+}
+
+.sub-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-size: 9px;
+}
+
+/* Кастомный плоский тумблер свитча */
+.toggle {
+    width: 29px;
+    height: 13px;
+    border-radius: 8px;
+    background: #65727a;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #59656b;
+}
+
+.toggle:after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #e7eaeb;
+    transition: left 0.1s;
+}
+
+.toggle.on {
+    background: #168fc0;
+}
+
+.toggle.on:after {
+    left: 17px;
+}
+
+.sub-controls .pipe {
+    color: #929a9e;
+    margin: 0 2px;
+}
+
+.columns {
+    border: 0;
+    background: transparent;
+    color: #68747a;
+    font-size: 9px;
+    padding: 0;
+}
+
+/* ==========================================================================
+   ЯРУС 3: МОНОЛИТНЫЙ ЗАГОЛОВОК СПИСКА СИТУАЦИЙ
+   ========================================================================== */
+.list-head {
+    height: 31px;
+    min-height: 31px;
+    background: #7f8d95;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 36px;
+}
+
+.list-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.list-name .arrow {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.list-name .up {
+    font-size: 9px;
+    margin-left: 2px;
+}
+
+.notify {
+    font-size: 8px;
+    color: #d1d6d8;
+}
+
+.notify-dot {
+    font-size: 6px;
+    margin-right: 3px;
+    color: #c5cdd0;
+}
+
+/* ==========================================================================
+   ЯРУС 4: ГЕОМЕТРИЯ ДВУХЪЯРУСНОЙ ТАБЛИЦЫ ЕКП
+   ========================================================================== */
+.table-wrap {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 0 5px;
+    background: #4a565e;
+}
+
+.table {
+    width: 100%;
+    height: auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+    min-width: 980px;
+}
+
+/* Жесткие пропорции колонок АРМ Системы-112 */
+.table col:nth-child(1)  { width: 31px; }
+.table col:nth-child(2)  { width: 38px; }
+.table col:nth-child(3)  { width: 43px; }
+.table col:nth-child(4)  { width: 43px; }
+.table col:nth-child(5)  { width: 51px; }
+.table col:nth-child(6)  { width: 85px; }
+.table col:nth-child(7)  { width: 61px; }
+.table col:nth-child(8)  { width: 65px; }
+.table col:nth-child(9)  { width: 275px; }
+.table col:nth-child(10) { width: 47px; }
+.table col:nth-child(11) { width: 102px; }
+.table col:nth-child(12) { width: auto; }
+.table col:nth-child(13) { width: 58px; }
+
+.table th {
+    height: 22px;
+    padding: 0 6px;
+    text-align: left;
+    background: #78858d;
+    color: #263239;
+    border-right: 1px solid #89959b;
+    border-bottom: 1px solid #65727a;
+    font-size: 8px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.table th.sortable {
+    cursor: pointer;
+}
+
+.table th.sortable:hover {
+    background: #839098;
+}
+
+.table td {
+    padding: 0 6px;
+    border-right: 1px solid #47535a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Строка 1 яруса записи: Основные данные */
+.main {
+    height: 30px;
+    background: #303a40;
+    color: #edf0f1;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.main:hover {
+    background: #37434a;
+}
+
+.main.selected {
+    background: #075f8d;
+}
+
+.main td:nth-child(-n+8),
+.main td:nth-child(10),
+.main td:nth-child(11),
+.main td:nth-child(13) {
+    text-align: center;
+}
+
+/* Строка 2 яруса записи: Текст описания */
+.desc {
+    height: 23px;
+    background: #526069;
+    color: #b8c1c5;
+    font-size: 9px;
+}
+
+.desc td {
+    border-bottom: 1px solid #67747b;
+}
+
+/* Иконки и ссылки карточек */
+.phone {
+    font-size: 11px;
+    color: #bfc7ca;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 19px;
+    background: #a43b4d;
+    color: #fff;
+}
+
+.bookmark {
+    color: #69767d;
+    font-size: 13px;
+}
+
+.num { font-weight: 400; }
+.time { font-weight: bold; }
+.done { color: #909ca1; }
+.address { color: #c1c9cc; }
+.doc { font-size: 12px; color: #cbd1d3; margin-right: 6px; }
+.check { font-size: 14px; color: #d4dadd; }
+
+/* Подсветка критической угрозы */
+.critical {
+    background: #3c3438;
+}
+
+.critical td:first-child {
+    border-left: 3px solid #a94b57;
+}
+
+/* Выдвижная подстрочная панель подробностей вызова */
+.details td {
+    height: 55px;
+    background: #242c31;
+    color: #b8c1c4;
+    font-size: 9px;
+    padding: 8px 12px;
+    white-space: normal;
+}
+
+.details-flex {
+    display: flex;
+    gap: 45px;
+    line-height: 14px;
+}
+
+.details-flex b {
+    color: #e0e5e7;
+}
+
+/* ==========================================================================
+   ЯРУС 5: НИЖНИЙ БЛОК ПАГИНАЦИИ
+   ========================================================================== */
+.bottom {
+    height: 28px;
+    min-height: 28px;
+    background: #73818a;
+    border-top: 1px solid #5e6b72;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px 0 35px;
+    color: #d9dddf;
+    font-size: 9px;
+}
+
+.group {
+    border: 0;
+    background: transparent;
+    color: #d9dddf;
+    font-size: 9px;
+}
+
+.pager {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pager .arr {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.pager .arr.disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.pager b {
+    font-weight: 400;
+}
+
+.page-size {
+    background: transparent;
+    color: #e1e5e6;
+    border: 0;
+    font-size: 9px;
+}
+
+/* ==========================================================================
+   СИСТЕМНЫЕ СЛУЖЕБНЫЕ ОКНА И МОДАЛКИ (ИНКУБАЦИЯ)
+   ========================================================================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 27, 31, .55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.overlay.show {
+    display: flex;
+}
+
+.modal {
+    width: 620px;
+    max-height: 88vh;
+    overflow: auto;
+    background: #dce1e3;
+    color: #263239;
+    border: 1px solid #8b969c;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .45);
+}
+
+.modal.small {
+    width: 420px;
+}
+
+.modal-head {
+    height: 40px;
+    background: #303a40;
+    color: #eef1f2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 13px;
+    font-size: 13px;
+}
+
+.modal-close {
+    border: 0;
+    background: transparent;
+    color: #cfd5d8;
+    font-size: 20px;
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-actions {
+    padding: 10px 15px;
+    border-top: 1px solid #aeb6ba;
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 9px;
+    color: #566269;
+}
+
+.field input, .field select {
+    height: 27px;
+    border: 1px solid #9ba5aa;
+    background: #f5f6f5;
+    color: #263239;
+    padding: 0 7px;
+}
+
+.field textarea {
+    height: 75px;
+    resize: vertical;
+    border: 1px solid #9ba5aa;
+    background: #f5f6f5;
+    color: #263239;
+    padding: 7px;
+}
+
+.btn {
+    height: 27px;
+    border: 1px solid #909ba0;
+    background: #eef0ef;
+    color: #3b464b;
+    padding: 0 12px;
+}
+
+.btn.primary {
+    background: #087db9;
+    color: #fff;
+    border-color: #086e9f;
+}
+
+.btn.danger {
+    background: #ef632e;
+    color: #fff;
+    border-color: #d75627;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 7px 12px;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.card-info b {
+    color: #566269;
+}
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: #7a858a;
+}
+
+/* ==========================================================================
+   АДАПТИВНОСТЬ ПОД МАЛЫЕ РАЗРЕШЕНИЯ МОНИТОРОВ
+   ========================================================================== */
+@media(max-width: 1100px) {
+    #app { min-width: 0; }
+    .top { grid-template-columns: 49% 1fr 82px; }
+    .system { grid-template-columns: 150px 1fr 90px; }
+    .system-date { font-size: 8px; }
+    .system-user { font-size: 7px; }
+    .module .txt { font-size: 6px; }
+    .module .ico { font-size: 11px; }
+    .new-card { font-size: 8px; }
+}

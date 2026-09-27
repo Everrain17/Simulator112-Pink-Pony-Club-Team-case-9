@@ -1,0 +1,135 @@
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 14:45:29 | ERROR   | admin_tool.server | req=- | [server] процесс завершилс€ с кодом 1.
+2026-09-27 14:46:14 | WARNING | admin_tool.login | req=- | backend unreachable after 20 tries Ч diagnosing
+2026-09-27 14:46:16 | WARNING | admin_tool.login | req=- | diagnosis: infra ok, backend silent
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 15:36:24 | WARNING | admin_tool.main | req=- | Docker Desktop not running Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 15:48:38 | WARNING | admin_tool.main | req=- | Docker Desktop not running Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 15:57:52 | WARNING | admin_tool.main | req=- | Docker Desktop not running Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 15:58:33 | WARNING | admin_tool.main | req=- | Docker Desktop not running Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 16:25:20 | WARNING | admin_tool.main | req=- | Docker Desktop not running Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 16:31:01 | WARNING | admin_tool.main | req=- | Docker running but Postgres/Redis containers not healthy Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 16:31:34 | WARNING | admin_tool.main | req=- | Docker running but Postgres/Redis containers not healthy Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+2026-09-27 17:36:47 | WARNING | admin_tool.main | req=- | Docker Desktop not running Ч backend not started
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\repos\112\Simulator112\serv-112\admin_tool\main.py", line 17, in <module>
+    from admin_tool.server_manager import ServerManager
+  File "D:\repos\112\Simulator112\serv-112\admin_tool\server_manager.py", line 655
+    if not self.log_path.exists():
+    ^
+IndentationError: expected an indented block after function definition on line 654
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========
+
+
+========== START ADMIN TOOL ==========
+
+========== STOP ADMIN TOOL ==========

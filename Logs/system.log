@@ -1,0 +1,1003 @@
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=7072
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=3356
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=16092
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=5896
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 7072
+TTS PID: 3356
+C# PID: 16092
+Admin Tool CMD PID: 5896
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=5896
+[STOP] C# BACKEND PID=16092
+[STOP] TTS SERVER PID=3356
+[STOP] QWEN PID=7072
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=10200
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=7628
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=7284
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18428
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 10200
+TTS PID: 7628
+C# PID: 7284
+Admin Tool CMD PID: 18428
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18428
+[STOP] C# BACKEND PID=7284
+[STOP] TTS SERVER PID=7628
+[STOP] QWEN PID=10200
+[STOP] Backend PID from backend.pid: 17212
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=1452
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=17432
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=11936
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=16956
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 1452
+TTS PID: 17432
+C# PID: 11936
+Admin Tool CMD PID: 16956
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=16956
+[STOP] C# BACKEND PID=11936
+[STOP] TTS SERVER PID=17432
+[STOP] QWEN PID=1452
+[STOP] Backend PID from backend.pid: 18552
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=18460
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=7320
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=2524
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=6900
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 18460
+TTS PID: 7320
+C# PID: 2524
+Admin Tool CMD PID: 6900
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=6900
+[STOP] C# BACKEND PID=2524
+[STOP] TTS SERVER PID=7320
+[STOP] QWEN PID=18460
+[STOP] Backend PID from backend.pid: 16824
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=17384
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=4244
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=12180
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18816
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 17384
+TTS PID: 4244
+C# PID: 12180
+Admin Tool CMD PID: 18816
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18816
+[STOP] C# BACKEND PID=12180
+[STOP] TTS SERVER PID=4244
+[STOP] QWEN PID=17384
+[STOP] Backend PID from backend.pid: 20408
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=11456
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=3896
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=17888
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=5420
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 11456
+TTS PID: 3896
+C# PID: 17888
+Admin Tool CMD PID: 5420
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=5420
+[STOP] C# BACKEND PID=17888
+[STOP] TTS SERVER PID=3896
+[STOP] QWEN PID=11456
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=11464
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=12348
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=10188
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18616
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 11464
+TTS PID: 12348
+C# PID: 10188
+Admin Tool CMD PID: 18616
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18616
+[STOP] C# BACKEND PID=10188
+[STOP] TTS SERVER PID=12348
+[STOP] QWEN PID=11464
+[STOP] Backend PID from backend.pid: 18732
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=7008
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=20160
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=7780
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=7580
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 7008
+TTS PID: 20160
+C# PID: 7780
+Admin Tool CMD PID: 7580
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=7580
+[STOP] C# BACKEND PID=7780
+[STOP] TTS SERVER PID=20160
+[STOP] QWEN PID=7008
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=18436
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=19288
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=19608
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18308
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 18436
+TTS PID: 19288
+C# PID: 19608
+Admin Tool CMD PID: 18308
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18308
+[STOP] C# BACKEND PID=19608
+[STOP] TTS SERVER PID=19288
+[STOP] QWEN PID=18436
+[STOP] Backend PID from backend.pid: 19620
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=15460
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=11312
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=3512
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=20440
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 15460
+TTS PID: 11312
+C# PID: 3512
+Admin Tool CMD PID: 20440
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=20440
+[STOP] C# BACKEND PID=3512
+[STOP] TTS SERVER PID=11312
+[STOP] QWEN PID=15460
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=17152
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=17848
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=12432
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=3380
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 17152
+TTS PID: 17848
+C# PID: 12432
+Admin Tool CMD PID: 3380
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=3380
+[STOP] C# BACKEND PID=12432
+[STOP] TTS SERVER PID=17848
+[STOP] QWEN PID=17152
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=2588
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=108
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=13304
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=8260
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 2588
+TTS PID: 108
+C# PID: 13304
+Admin Tool CMD PID: 8260
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=8260
+[STOP] C# BACKEND PID=13304
+[STOP] TTS SERVER PID=108
+[STOP] QWEN PID=2588
+[STOP] Backend PID from backend.pid: 8404
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=5784
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=12540
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=6440
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=9616
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 5784
+TTS PID: 12540
+C# PID: 6440
+Admin Tool CMD PID: 9616
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=9616
+[STOP] C# BACKEND PID=6440
+[STOP] TTS SERVER PID=12540
+[STOP] QWEN PID=5784
+[STOP] Backend PID from backend.pid: 2348
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=1436
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=17224
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=20088
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=5768
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 1436
+TTS PID: 17224
+C# PID: 20088
+Admin Tool CMD PID: 5768
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=5768
+[STOP] C# BACKEND PID=20088
+[STOP] TTS SERVER PID=17224
+[STOP] QWEN PID=1436
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=18916
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=8060
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=10712
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18364
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 18916
+TTS PID: 8060
+C# PID: 10712
+Admin Tool CMD PID: 18364
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18364
+[STOP] C# BACKEND PID=10712
+[STOP] TTS SERVER PID=8060
+[STOP] QWEN PID=18916
+[STOP] Backend PID from backend.pid: 20464
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=10524
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=10308
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=10140
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=8932
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 10524
+TTS PID: 10308
+C# PID: 10140
+Admin Tool CMD PID: 8932
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=8932
+[STOP] C# BACKEND PID=10140
+[STOP] TTS SERVER PID=10308
+[STOP] QWEN PID=10524
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=2780
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=18636
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=6040
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=16172
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 2780
+TTS PID: 18636
+C# PID: 6040
+Admin Tool CMD PID: 16172
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=16172
+[STOP] C# BACKEND PID=6040
+[STOP] TTS SERVER PID=18636
+[STOP] QWEN PID=2780
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=19588
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=8180
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=16140
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=17404
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 19588
+TTS PID: 8180
+C# PID: 16140
+Admin Tool CMD PID: 17404
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=17404
+[STOP] C# BACKEND PID=16140
+[STOP] TTS SERVER PID=8180
+[STOP] QWEN PID=19588
+[STOP] Backend PID from backend.pid: 13344
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=9140
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=6300
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=4532
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18616
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 9140
+TTS PID: 6300
+C# PID: 4532
+Admin Tool CMD PID: 18616
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18616
+[STOP] C# BACKEND PID=4532
+[STOP] TTS SERVER PID=6300
+[STOP] QWEN PID=9140
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=9000
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=18728
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=15248
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=19164
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 9000
+TTS PID: 18728
+C# PID: 15248
+Admin Tool CMD PID: 19164
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=19164
+[STOP] C# BACKEND PID=15248
+[STOP] TTS SERVER PID=18728
+[STOP] QWEN PID=9000
+[STOP] Backend PID from backend.pid: 12360
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=19904
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=11236
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=20032
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=18864
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 19904
+TTS PID: 11236
+C# PID: 20032
+Admin Tool CMD PID: 18864
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 1
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=18864
+[STOP] C# BACKEND PID=20032
+[STOP] TTS SERVER PID=11236
+[STOP] QWEN PID=19904
+[STOP] Backend PID from backend.pid: 12360
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=19752
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=19928
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=10912
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=19468
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 19752
+TTS PID: 19928
+C# PID: 10912
+Admin Tool CMD PID: 19468
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=19468
+[STOP] C# BACKEND PID=10912
+[STOP] TTS SERVER PID=19928
+[STOP] QWEN PID=19752
+[STOP] Backend PID from backend.pid: 8408
+
+==========================================
+SYSTEM112 PRODUCTION LAUNCHER START
+ROOT: D:\repos\112\Simulator112
+EXE: D:\repos\112\Simulator112\System112.exe
+==========================================
+[CHECK] Проверка файлов
+[FOUND] Qwen: D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64\llama-server.exe
+[FOUND] TTS activate: D:\repos\112\Simulator112\tts-server\venv\Scripts\activate.bat
+[FOUND] TTS server: D:\repos\112\Simulator112\tts-server\tts_server.py
+[FOUND] Admin activate: D:\repos\112\Simulator112\serv-112\.venv\Scripts\activate.bat
+[FOUND] Admin main: D:\repos\112\Simulator112\serv-112\admin_tool\main.py
+[START] QWEN
+[CWD] D:\repos\112\Simulator112\llama-b8665-bin-win-cuda-13.1-x64
+[COMMAND] ['D:\\repos\\112\\Simulator112\\llama-b8665-bin-win-cuda-13.1-x64\\llama-server.exe', '-m', '.\\qwen2.5-14b-instruct-q4_k_m.gguf', '-ngl', '20', '-c', '4096', '--port', '8080', '--host', '0.0.0.0', '--temp', '0.55', '--repeat-penalty', '1.2', '-t', '6', '--reasoning', 'off']
+[OK] QWEN PID=12392
+[START] TTS SERVER
+[CWD] D:\repos\112\Simulator112\tts-server
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call venv\\Scripts\\activate.bat & python tts_server.py']
+[OK] TTS SERVER PID=18324
+[DOTNET] C:\Program Files\dotnet\dotnet.exe
+[START] C# BACKEND
+[CWD] D:\repos\112\Simulator112
+[COMMAND] ['C:\\Program Files\\dotnet\\dotnet.exe', 'run']
+[OK] C# BACKEND PID=2136
+[START] ADMIN TOOL
+[CWD] D:\repos\112\Simulator112\serv-112
+[COMMAND] ['C:\\Windows\\system32\\cmd.exe', '/c', 'call .venv\\Scripts\\activate.bat & python -m admin_tool.main']
+[OK] ADMIN TOOL PID=12220
+==========================================
+Все компоненты отправлены на запуск.
+Qwen PID: 12392
+TTS PID: 18324
+C# PID: 2136
+Admin Tool CMD PID: 12220
+==========================================
+[WAIT] Ожидание закрытия Admin Tool...
+Admin Tool завершён. Код: 0
+[STOP] Остановка всех компонентов
+[STOP] ADMIN TOOL PID=12220
+[STOP] C# BACKEND PID=2136
+[STOP] TTS SERVER PID=18324
+[STOP] QWEN PID=12392
+[STOP] Backend PID from backend.pid: 17680
