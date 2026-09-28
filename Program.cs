@@ -926,6 +926,24 @@ async Task HandleCallStreamingAsync(WebSocket webSocket, HttpContext context)
                                         OperatorAuditEngine.UpdateCallAnalysis(call.Id, replyAnalysis, currentCallSeconds, engine.GetCallAnalysisResults());
                                     }
                                 }
+                                lock (simulationLock)
+                                {
+                                    if (engine != null &&
+                                        engine.GetActiveSessions().TryGetValue(currentCallIdCopy, out var session))
+                                    {
+                                        lock (session)
+                                        {
+                                            session.Utterances.Add(
+                                                new Utterance
+                                                {
+                                                    Speaker = SpeakerRole.Operator,
+                                                    Text = text,
+                                                    Timestamp = DateTime.UtcNow
+                                                }
+                                            );
+                                        }
+                                    }
+                                }
                                 // 2. Сборка промпта строго по живому контексту
                                 AIPromptPayload? payload = null;
                                 lock (simulationLock)
@@ -935,12 +953,23 @@ async Task HandleCallStreamingAsync(WebSocket webSocket, HttpContext context)
                                         var hiddenFacts = incident.HiddenFacts;
                                         var emptySuggestedTopics = new List<string>();
                                         var lastAction = engine.GetSystemEventsLog().LastOrDefault(a => a.Contains(call.Id)) ?? "none";
+                                        List<Utterance> dialogueHistory = new();
+
+                                        if (engine.GetActiveSessions().TryGetValue(call.Id, out var currentSession))
+                                        {
+                                            lock (currentSession)
+                                            {
+                                                dialogueHistory = currentSession.Utterances.ToList();
+                                            }
+                                        }
+
                                         payload = AiPromptBuilder.BuildPrompt(
                                             incident,
                                             call.Caller,
                                             hiddenFacts,
-                                            lastAction,
+                                            text,
                                             emptySuggestedTopics,
+                                            dialogueHistory,
                                             (int)engine.GetTotalElapsedSeconds(),
                                             engine.GetTotalElapsedSeconds()
                                         );
