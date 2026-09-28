@@ -1113,6 +1113,55 @@ function stopVoiceStreaming() {
     if (sttWebSocket) { sttWebSocket.close(); sttWebSocket = null; }
     if (csharpWebSocket) { csharpWebSocket.close(); csharpWebSocket = null; }
 }
+async function checkAudioAccess() {
+    const audioStatus = document.getElementById("audioStatus");
+
+    if (!audioStatus) return;
+
+    audioStatus.classList.remove("audio-ok");
+    audioStatus.title = "Нет доступа к микрофону";
+
+    try {
+        if (!navigator.mediaDevices) {
+            audioStatus.title = "Аудио недоступно";
+            return;
+        }
+
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const hasMicrophone = devices.some(
+            device => device.kind === "audioinput"
+        );
+
+        if (!hasMicrophone) {
+            audioStatus.title = "Микрофон не найден";
+            return;
+        }
+
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio: true
+        });
+
+        const hasActiveTrack = stream.getAudioTracks().some(
+            track => track.readyState === "live"
+        );
+
+        if (hasActiveTrack) {
+            audioStatus.classList.add("audio-ok");
+            audioStatus.title = "Микрофон доступен";
+        }
+
+        stream.getTracks().forEach(track => track.stop());
+
+    } catch (error) {
+        console.error("Audio access error:", error);
+
+        audioStatus.classList.remove("audio-ok");
+        audioStatus.title = "Нет доступа к микрофону";
+    }
+}
+
+checkAudioAccess();
+
 (async () => {
     try {
         await loadCurrentStudent();

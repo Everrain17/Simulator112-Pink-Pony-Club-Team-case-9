@@ -82,14 +82,13 @@ namespace AIEngine
                          $"<|im_start|>user\nОператор 112 говорит: \"{operatorReply}\"<|im_end|>\n" +
                          "<|im_start|>assistant\n",
                 temperature = 0.25,
-                max_tokens = 60,
+                max_tokens = 200,
                 stream = true,
                 repeat_penalty = 1.15,
                 stop = new[]
                             {
                     "<|im_end|>",
                     "<|im_start|>",
-                    "\n",
                     "assistant:",
                     "user:"
                 }
@@ -141,6 +140,7 @@ namespace AIEngine
 
                 if (!string.IsNullOrEmpty(tokenToYield))
                 {
+                    Console.WriteLine($"[QWEN] >>> {tokenToYield}");
                     yield return tokenToYield;
                 }
             }

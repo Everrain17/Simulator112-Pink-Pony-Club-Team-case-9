@@ -713,6 +713,46 @@ button {
     color: #7a858a;
 }
 
+.audio-status {
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    margin-left: 4px;
+    position: relative;
+    border: 2px solid #e53935;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    box-sizing: border-box;
+}
+
+.audio-status::before,
+.audio-status::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 4px;
+    height: 8px;
+    background: #e53935;
+    border-radius: 2px;
+}
+
+.audio-status::before {
+    left: -4px;
+}
+
+.audio-status::after {
+    right: -4px;
+}
+
+/* Микрофон доступен */
+.audio-status.audio-ok {
+    border-color: #43a047;
+}
+
+.audio-status.audio-ok::before,
+.audio-status.audio-ok::after {
+    background: #43a047;
+}
 /* ==========================================================================
    АДАПТИВНОСТЬ ПОД МАЛЫЕ РАЗРЕШЕНИЯ МОНИТОРОВ
    ========================================================================== */
