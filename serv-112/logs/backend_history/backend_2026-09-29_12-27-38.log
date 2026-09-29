@@ -1,0 +1,1128 @@
+WARNING:app.server:SSLContext.set_ciphersuites недоступен — используются дефолтные TLS 1.3 cipher suites OpenSSL
+INFO:app.server:mTLS выключен: проверяется только серверный сертификат
+INFO:app.server:TLS готов: min_version=1.2, ciphers(TLS\u22641.2)=9 шт., ciphers(TLS 1.3)=по умолчанию
+INFO:app.server:SSLContext передан в uvicorn
+INFO:     Started server process [1848]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://192.168.1.103:8010 (Press CTRL+C to quit)
+INFO:     192.168.1.103:56219 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56219 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56246 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56246 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "OPTIONS /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/classifier "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "OPTIONS /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "OPTIONS /api/v1/users/trainees HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "GET /api/v1/users/trainees HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/classifier "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "GET /api/v1/users/trainees HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "OPTIONS /api/v1/runtime/teacher/calls HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/teacher/calls HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "OPTIONS /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "DELETE /api/v1/runtime/teacher/calls HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 1 истекла по таймауту
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56250 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56250 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56319 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56319 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "OPTIONS /api/v1/runtime/start HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/start "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "POST /api/v1/runtime/start HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56328 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56328 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56328 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56328 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56328 - "OPTIONS /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/accept-call "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "POST /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56273 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56273 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 3 истекла по таймауту
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/classifier "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56413 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56459 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56459 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56487 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 2 истекла по таймауту
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56591 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56591 - "OPTIONS /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/card HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "POST /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/card HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "OPTIONS /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/complete HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/call-snapshot/CALL-0001-912c0e04e62942debb7584e69613bf07 "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56591 - "POST /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/complete HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56591 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56591 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "OPTIONS /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/finish HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/call-snapshot/CALL-0001-912c0e04e62942debb7584e69613bf07 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/complete-call "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "POST /api/v1/runtime/calls/CALL-0001-912c0e04e62942debb7584e69613bf07/finish HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56536 - "OPTIONS /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/accept-call "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "POST /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/classifier "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56651 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "OPTIONS /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/card HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "POST /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/card HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "OPTIONS /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/complete HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/call-snapshot/CALL-0002-a5832e9624884d3db9f146fc9160301a "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56757 - "POST /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/complete HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56757 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56757 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56757 - "OPTIONS /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/finish HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/call-snapshot/CALL-0002-a5832e9624884d3db9f146fc9160301a "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/complete-call "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "POST /api/v1/runtime/calls/CALL-0002-a5832e9624884d3db9f146fc9160301a/finish HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56697 - "OPTIONS /api/v1/runtime/calls/CALL-0003-40b41548c61e4e2ebeeba55ffee16852/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/accept-call "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56757 - "POST /api/v1/runtime/calls/CALL-0003-40b41548c61e4e2ebeeba55ffee16852/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56757 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56757 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56852 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56852 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56219 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 3 истекла по таймауту
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:56860 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://localhost:8000/ "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET http://localhost:8080/health "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:56907 - "GET /api/v1/admin/system/info HTTP/1.1" 200 OK

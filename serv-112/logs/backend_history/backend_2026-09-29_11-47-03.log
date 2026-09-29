@@ -1,0 +1,33 @@
+WARNING:app.server:SSLContext.set_ciphersuites недоступен Ч используютс€ дефолтные TLS 1.3 cipher suites OpenSSL
+INFO:app.server:mTLS выключен: провер€етс€ только серверный сертификат
+INFO:app.server:TLS готов: min_version=1.2, ciphers(TLS\u22641.2)=9 шт., ciphers(TLS 1.3)=по умолчанию
+INFO:app.server:SSLContext передан в uvicorn
+INFO:     Started server process [9068]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://192.168.1.103:8010 (Press CTRL+C to quit)
+INFO:     192.168.1.103:55286 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55286 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55291 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55291 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55291 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55291 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55291 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55339 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55291 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55350 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55351 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55352 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55353 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55354 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55355 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55356 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55357 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55358 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55405 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request

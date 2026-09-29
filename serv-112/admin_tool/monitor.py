@@ -9,12 +9,12 @@ logger = logging.getLogger("admin_tool.monitor")
 
 
 class _HealthSignals(QObject):
-    # api_ok, redis_ok
-    result = Signal(bool, bool)
+    # Обновленный Qt-сигнал на 5 параметров состояния
+    result = Signal(bool, bool, bool, bool, bool)
 
 
 class _HealthTask(QRunnable):
-    """Опрос /healthz в фоновом потоке, чтобы не морозить GUI."""
+
 
     def __init__(self, api, signals: _HealthSignals):
         super().__init__()
@@ -25,21 +25,32 @@ class _HealthTask(QRunnable):
     def run(self) -> None:
         api_ok = False
         redis_ok = False
+        simcore_ok = False
+        tts_ok = False
+        qwen_ok = False
+        
         try:
             h = self.api.healthz(timeout=1.5)
             api_ok = True
             redis_ok = bool(h.get("redis"))
+            
+            # Запрашиваем информацию о состоянии компонентов с Python бэкенда
+            sys_info = self.api.system_info()
+            simcore_ok = sys_info.get("simcore_ok", False)
+            tts_ok = sys_info.get("tts_ok", False)
+            qwen_ok = sys_info.get("qwen_ok", False)
         except Exception:
             pass
+            
         try:
-            self.signals.result.emit(api_ok, redis_ok)
+            self.signals.result.emit(api_ok, redis_ok, simcore_ok, tts_ok, qwen_ok)
         except RuntimeError:
             pass
 
 
 class Monitor(QObject):
     metrics = Signal(dict)
-    # поля: state, pid, cpu, ram_mb, uptime, redis_ok, api_ok
+
 
     POLL_INTERVAL_MS = 5000
 
@@ -67,7 +78,7 @@ class Monitor(QObject):
         self._timer.stop()
         self._pending = None
 
-    # ------------------------------------------------------------------ tick
+
 
     def _tick(self) -> None:
         if self._inflight:
@@ -81,6 +92,9 @@ class Monitor(QObject):
             "uptime": 0,
             "redis_ok": False,
             "api_ok": False,
+            "simcore_ok": False,
+            "tts_ok": False,
+            "qwen_ok": False,
         }
 
         if self.sm.pid:
@@ -90,7 +104,7 @@ class Monitor(QObject):
         self._inflight = True
         self._pool.start(_HealthTask(self.api, self._signals))
 
-    def _on_health(self, api_ok: bool, redis_ok: bool) -> None:
+    def _on_health(self, api_ok: bool, redis_ok: bool, simcore_ok: bool, tts_ok: bool, qwen_ok: bool) -> None:
         self._inflight = False
         data = self._pending
         self._pending = None
@@ -99,6 +113,9 @@ class Monitor(QObject):
 
         data["api_ok"] = api_ok
         data["redis_ok"] = redis_ok
+        data["simcore_ok"] = simcore_ok
+        data["tts_ok"] = tts_ok
+        data["qwen_ok"] = qwen_ok
 
         self._log_transitions(data)
         self.metrics.emit(data)

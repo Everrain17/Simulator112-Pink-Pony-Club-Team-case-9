@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -40,17 +41,20 @@ namespace AIEngine
             );
         }
 
+        // Перегрузка по умолчанию (для совместимости с базовым интерфейсом ITtsService)
         public Task<byte[]> SynthesizeAsync(
             string text,
             CancellationToken ct = default)
         {
-            return SynthesizeAsync(text, "male", 0, ct);
+            return SynthesizeAsync(text, "male", 0, "CALL-UNKNOWN", ct);
         }
 
+        // Основной метод синтеза, принимающий callId
         public async Task<byte[]> SynthesizeAsync(
             string text,
             string gender,
             int panicLevel,
+            string callId,
             CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -58,12 +62,14 @@ namespace AIEngine
 
             try
             {
+                // Упаковываем call_id в json body для Python-сервера
                 var requestBody = new
                 {
                     model = _modelName,
                     input = text,
                     gender = gender,
-                    panic_level = panicLevel
+                    panic_level = panicLevel,
+                    call_id = callId
                 };
 
                 using var request = new HttpRequestMessage(
@@ -102,6 +108,7 @@ namespace AIEngine
             }
         }
 
+        // Базовый стриминг-метод без контекста
         public async IAsyncEnumerable<byte[]> SynthesizeStreamingAsync(
             IAsyncEnumerable<string> textTokens,
             [EnumeratorCancellation] CancellationToken ct = default)
@@ -110,16 +117,19 @@ namespace AIEngine
                 textTokens,
                 "male",
                 0,
+                "CALL-UNKNOWN",
                 ct))
             {
                 yield return chunk;
             }
         }
 
+        // Стриминг-метод с контекстом и поддержкой callId
         public async IAsyncEnumerable<byte[]> SynthesizeStreamingWithContextAsync(
             IAsyncEnumerable<string> textTokens,
             string gender,
             double panicLevel,
+            string callId,
             [EnumeratorCancellation] CancellationToken ct = default)
         {
             var buffer = new StringBuilder();
@@ -160,6 +170,7 @@ namespace AIEngine
                     textChunk,
                     genderKey,
                     intPanic,
+                    callId,
                     ct
                 );
 
@@ -177,6 +188,7 @@ namespace AIEngine
                         textChunk,
                         genderKey,
                         intPanic,
+                        callId,
                         ct
                     );
 

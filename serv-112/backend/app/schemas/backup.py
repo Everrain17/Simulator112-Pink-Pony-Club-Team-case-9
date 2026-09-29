@@ -22,7 +22,7 @@ class BackupCreateResponse(BaseModel):
 
 
 class BackupReconcileResponse(BaseModel):
-    """Результат ручной синхронизации backup_records ↔ файлы на диске."""
+
     changes: int
 
 
@@ -32,13 +32,18 @@ class RestoreResponse(BaseModel):
 
 
 class SystemInfo(BaseModel):
-    """Текущее состояние runtime — то, что реально работает в engine."""
+
     db_pool_size: int
     db_max_overflow: int
     db_pool_recycle: int
     db_pool_timeout: int
     db_echo_sql: bool
-    db_url_safe: str          # без пароля
+    db_url_safe: str
     backup_dir: str
     backup_count: int
     backup_total_bytes: int
+    
+    # Новые поля мониторинга компонентов ядра
+    simcore_ok: bool
+    tts_ok: bool
+    qwen_ok: bool

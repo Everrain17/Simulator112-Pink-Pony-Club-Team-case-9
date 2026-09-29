@@ -1439,6 +1439,12 @@ async function exportTeacherData() {
                 exportData,
                 timestamp
             );
+			await apiFetch(
+			"/runtime/teacher/calls",
+			{
+				method: "DELETE"
+			}
+			);
 
             alert(
                 "Данные успешно выгружены.\n\n" +
@@ -1452,7 +1458,12 @@ async function exportTeacherData() {
             exportData,
             timestamp
         );
-
+		await apiFetch(
+			"/runtime/teacher/calls",
+			{
+				method: "DELETE"
+			}
+		);
         alert(
             "Браузер не поддерживает выбор папки.\n\n" +
             "Данные сохранены одним JSON-файлом."
@@ -1487,6 +1498,17 @@ async function exportTeacherData() {
         }
     }
 }
+
+setInterval(() => {
+    if (!accessToken) return;
+
+    fetch(`${PYTHON_API_BASE}/auth/heartbeat`, {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${accessToken}`
+        }
+    }).catch(() => {});
+}, 10000);
 
 (async () => {
 

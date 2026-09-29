@@ -272,7 +272,31 @@ class RuntimeCallService:
             "callId": call_id,
             "comment": payload.comment,
         })
+        
+    async def finish_without_card(self, call_id: str) -> RuntimeCall:
+        row = await self._get_or_create(call_id)
 
+        await self.simcore.release_call(call_id)
+
+        row.status = "released"
+
+        await self.record_action(
+            RuntimeActionCreate(
+                call_id=call_id,
+                session_id=row.session_id,
+                student_id=row.student_id,
+                action_type="CALL_RELEASED",
+                timestamp_sec=0.0,
+                params={},
+            ),
+            operator_id=row.operator_id,
+        )
+
+        await self.db.flush()
+        await self.db.refresh(row)
+
+        return row
+        
     async def save_card(
         self,
         payload: OperatorCardSubmission,

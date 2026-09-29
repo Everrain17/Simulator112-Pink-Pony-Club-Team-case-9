@@ -18,16 +18,24 @@ from app.api.deps import current_user
 from app.services.audit_service import AuditService
 from app.services.arm_registry import arm_registry
 
+import time
+import asyncio
+
 router = APIRouter()
 
-
-# Активные сессии обучаемых:
-# access_token -> номер ARM
+# Хранилище активных АРМ для учеников
 active_sessions: dict[str, int] = {}
 
-# Refresh-токены:
-# refresh_token -> номер ARM
+# Хранилище refresh-токенов для учеников
 refresh_sessions: dict[str, int] = {}
+
+# Глобальный список ID пользователей, которые сейчас авторизованы в системе
+# Ключ: user_id
+# Значение: access_token + время последнего heartbeat
+currently_logged_in_users: dict[int, dict] = {}
+
+# Через сколько секунд без heartbeat считать сессию потерянной
+SESSION_TIMEOUT = 30
 
 
 def create_session(user: User) -> Token:
@@ -35,6 +43,12 @@ def create_session(user: User) -> Token:
     refresh_token = create_refresh_token(user.username)
 
     arm = None
+
+    # Фиксируем вход пользователя в глобальном трекере сессий
+    currently_logged_in_users[user.id] = {
+        "access_token": access_token,
+        "last_seen": time.time(),
+    }
 
     if user.role == "trainee":
         arm_number = arm_registry.acquire()
@@ -90,6 +104,18 @@ async def login(
         raise HTTPException(
             status.HTTP_403_FORBIDDEN,
             "User is deactivated",
+        )
+
+    # 🔥 БЕЗОПАСНАЯ ПРОВЕРКА: Студент защищен. Если он в системе — повторный вход запрещен.
+    if user.id in currently_logged_in_users:
+        await audit.log_security(
+            AuditAction.LOGIN_FAILED,
+            username=user.username,
+            details={"reason": "already_logged_in"},
+        )
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST,
+            "Невозможно войти: данный пользователь уже в системе",
         )
 
     await audit.log(
@@ -161,7 +187,10 @@ async def refresh(
     access_token = create_access_token(user.username)
     refresh_token = create_refresh_token(user.username)
 
-    arm = None
+    currently_logged_in_users[user.id] = {
+        "access_token": access_token,
+        "last_seen": time.time(),
+    }
 
     if user.role == "trainee" and arm_number is not None:
         refresh_sessions.pop(old_refresh_token, None)
@@ -193,6 +222,62 @@ async def me(user: User = Depends(current_user)):
     }
 
 
+# ============================================================
+# HEARTBEAT
+# ============================================================
+
+@router.post("/heartbeat")
+async def heartbeat(user: User = Depends(current_user)):
+    session = currently_logged_in_users.get(user.id)
+
+    if session is not None:
+        session["last_seen"] = time.time()
+
+    return {"ok": True}
+
+
+# ============================================================
+# АВТОМАТИЧЕСКАЯ ОЧИСТКА МЁРТВЫХ СЕССИЙ
+# ============================================================
+
+async def cleanup_expired_sessions():
+    while True:
+        await asyncio.sleep(10)
+
+        now = time.time()
+
+        for user_id, session in list(currently_logged_in_users.items()):
+            last_seen = session.get("last_seen", 0)
+
+            if now - last_seen <= SESSION_TIMEOUT:
+                continue
+
+            access_token = session.get("access_token")
+
+            currently_logged_in_users.pop(user_id, None)
+
+            arm_number = active_sessions.pop(access_token, None)
+
+            if arm_number is not None:
+                arm_registry.release(arm_number)
+
+                for refresh_token, refresh_arm in list(
+                    refresh_sessions.items()
+                ):
+                    if refresh_arm == arm_number:
+                        del refresh_sessions[refresh_token]
+
+            print(
+                f"[AUTH] Сессия пользователя {user_id} "
+                f"истекла по таймауту"
+            )
+
+
+@router.on_event("startup")
+async def start_session_cleanup():
+    asyncio.create_task(cleanup_expired_sessions())
+
+
 @router.post("/logout")
 async def logout(
     request: Request,
@@ -204,6 +289,8 @@ async def logout(
 
     if authorization.startswith("Bearer "):
         access_token = authorization[7:]
+
+    currently_logged_in_users.pop(user.id, None)
 
     arm_number = active_sessions.pop(access_token, None)
 

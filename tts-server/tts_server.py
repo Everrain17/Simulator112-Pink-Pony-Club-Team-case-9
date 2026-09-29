@@ -2,6 +2,7 @@ import io
 import os
 import json
 import torch
+import random
 import re  # <-- Добавляем для поиска чисел
 import scipy.io.wavfile as wavfile  # <-- Добавляем для работы с WAV в памяти
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
@@ -14,7 +15,7 @@ app = FastAPI(title="Local Silero v5 TTS + Vosk STT Server")
 # Автоматически проверяем видеокарту RTX 4050
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"[СЕРВЕР] Выбранное устройство: {device}")
-
+CALL_VOICE_CACHE = {}
 TTS_MODEL_PATH = "v5_ru.pt"
 STT_MODEL_PATH = "vosk-model-small-ru-0.22"
 
@@ -66,9 +67,30 @@ async def text_to_speech(request: dict):
             return num2words(int(match.group(0)), lang='ru')
         
         normalized_text = re.sub(r'\d+', replace_match, text)
+        # Вместо старого рандома пишем это:
+        call_id = request.get("call_id") or request.get("input", "")[:10] # берем call_id (или хэш начала текста как фолбэк)
 
-        speaker = "baya" if gender == "female" else "aidar"
-        
+        if call_id in CALL_VOICE_CACHE:
+            speaker = CALL_VOICE_CACHE[call_id]
+        else:
+            # Если звонок новый — один раз выбираем пол и голос
+            male_speakers = ["aidar", "eugene"]
+            female_speakers = ["baya", "kseniya", "xenia"]
+            
+            if gender == "female":
+                speaker = random.choice(female_speakers)
+            else:
+                speaker = random.choice(male_speakers)
+                
+            # Запоминаем выбор для этого call_id
+            CALL_VOICE_CACHE[call_id] = speaker
+
+        # Чтобы кэш не раздувался до бесконечности, можно очищать старые звонки, если их больше 100
+        if len(CALL_VOICE_CACHE) > 100:
+            # Удаляем самый старый добавленный ключ
+            first_key = next(iter(CALL_VOICE_CACHE))
+            del CALL_VOICE_CACHE[first_key]
+
         current_sample_rate = TTS_SAMPLE_RATE
         if panic_level > 80:
             current_sample_rate = int(TTS_SAMPLE_RATE * 1.2)

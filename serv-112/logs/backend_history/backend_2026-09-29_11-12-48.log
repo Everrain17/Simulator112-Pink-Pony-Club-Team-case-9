@@ -1,0 +1,14 @@
+WARNING:app.server:SSLContext.set_ciphersuites недоступен Ч используютс€ дефолтные TLS 1.3 cipher suites OpenSSL
+INFO:app.server:mTLS выключен: провер€етс€ только серверный сертификат
+INFO:app.server:TLS готов: min_version=1.2, ciphers(TLS\u22641.2)=9 шт., ciphers(TLS 1.3)=по умолчанию
+INFO:app.server:SSLContext передан в uvicorn
+INFO:     Started server process [12492]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://192.168.1.103:8010 (Press CTRL+C to quit)
+INFO:     192.168.1.103:53909 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:53909 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:53919 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:53919 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:53921 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:53921 - "GET /api/v1/auth/me HTTP/1.1" 200 OK

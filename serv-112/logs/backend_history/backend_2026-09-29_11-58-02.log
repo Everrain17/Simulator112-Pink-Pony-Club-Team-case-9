@@ -1,0 +1,373 @@
+WARNING:app.server:SSLContext.set_ciphersuites недоступен — используются дефолтные TLS 1.3 cipher suites OpenSSL
+INFO:app.server:mTLS выключен: проверяется только серверный сертификат
+INFO:app.server:TLS готов: min_version=1.2, ciphers(TLS\u22641.2)=9 шт., ciphers(TLS 1.3)=по умолчанию
+INFO:app.server:SSLContext передан в uvicorn
+INFO:     Started server process [3032]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://192.168.1.103:8010 (Press CTRL+C to quit)
+INFO:     192.168.1.103:55496 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55496 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55540 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55501 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 3 истекла по таймауту
+INFO:     192.168.1.103:55579 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55579 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55587 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55606 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55607 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55608 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55615 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55616 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55617 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55618 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55619 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55620 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55621 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55624 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55629 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55630 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55635 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55646 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55649 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+INFO:     192.168.1.103:55654 - "POST /api/v1/auth/login HTTP/1.1" 400 Bad Request
+[AUTH] Сессия пользователя 3 истекла по таймауту
+INFO:     192.168.1.103:55655 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55655 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55659 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55659 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 3 истекла по таймауту
+INFO:     192.168.1.103:55720 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55720 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55731 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55731 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/auth/me HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/classifier "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/classifier HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/users/trainees HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/users/trainees HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/runtime/start HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/start "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "POST /api/v1/runtime/start HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55734 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "OPTIONS /api/v1/runtime/calls/CALL-0001-d800d926fe7a406aa80aff993568f373/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: POST https://127.0.0.1:5000/api/accept-call "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "POST /api/v1/runtime/calls/CALL-0001-d800d926fe7a406aa80aff993568f373/accept HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55734 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55734 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55724 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+[AUTH] Сессия пользователя 3 истекла по таймауту
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55792 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55837 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55837 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55862 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55862 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+ERROR:asyncio:Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Everrain\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55876 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55876 - "POST /api/v1/auth/heartbeat HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55904 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://127.0.0.1:5000/api/state "HTTP/1.1 200 OK"
+INFO:     192.168.1.103:55904 - "GET /api/v1/runtime/state HTTP/1.1" 200 OK
+INFO:     192.168.1.103:55904 - "GET /api/v1/runtime/calls/saved?studentId=trainee HTTP/1.1" 200 OK

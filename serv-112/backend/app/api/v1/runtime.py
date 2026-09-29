@@ -408,6 +408,29 @@ async def finish_call(
             str(exc)
         ) from exc
         
+        
+@router.post("/calls/{call_id}/release", response_model=RuntimeResultRead)
+async def release_call(
+    call_id: str,
+    db: AsyncSession = Depends(get_session),
+):
+    try:
+        row = await RuntimeCallService(db).finish_without_card(call_id)
+        await db.commit()
+        return _serialize_public(row)
+    except SimCoreError as exc:
+        await db.rollback()
+        raise HTTPException(
+            status.HTTP_502_BAD_GATEWAY,
+            str(exc)
+        ) from exc
+    except ValueError as exc:
+        await db.rollback()
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST,
+            str(exc)
+        ) from exc 
+        
 @router.get("/calls/{call_id}/result", response_model=RuntimeResultRead)
 async def get_call_result(
     call_id: str,
@@ -455,13 +478,37 @@ async def list_teacher_calls(
             for row in rows
         ]
     }
+    
+@router.delete("/teacher/calls")
+async def delete_teacher_calls(
+    db: AsyncSession = Depends(get_session),
+    _: User = Depends(require_role("teacher", "admin")),
+):
+    result = await db.execute(
+        select(RuntimeCall)
+    )
 
+    rows = result.scalars().all()
+
+    deleted_count = len(rows)
+
+    for row in rows:
+        await db.delete(row)
+
+    await db.commit()
+
+    return {
+        "deleted": deleted_count
+    }
+    
 @router.get("/calls/saved")
 async def list_saved_calls(
     student_id: str | None = Query(None, alias="studentId"),
     db: AsyncSession = Depends(get_session),
 ):
-    query = select(RuntimeCall).order_by(RuntimeCall.created_at.desc())
+    query = select(RuntimeCall).where(
+        RuntimeCall.operator_card.isnot(None)
+    ).order_by(RuntimeCall.created_at.desc())
     if student_id:
         query = query.where(RuntimeCall.student_id == student_id)
     result = await db.execute(query)

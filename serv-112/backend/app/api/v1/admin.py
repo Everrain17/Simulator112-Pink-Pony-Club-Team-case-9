@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.pool import QueuePool
+import httpx
 
 from app import database
 from app.api.deps import require_role
@@ -23,13 +24,13 @@ from app.schemas.backup import (
 from app.services.admin_guard import ensure_not_last_ok_backup
 from app.services.audit_service import AuditService
 from app.services.backup_service import BackupService
-
+from app.services.simcore_client import SimCoreClient
 
 logger = logging.getLogger("app.admin")
 router = APIRouter()
 
 
-# ---------------------------------------------------------------- health
+
 
 @router.get("/health")
 async def health(_: User = Depends(require_role("admin"))):
@@ -55,7 +56,7 @@ async def health(_: User = Depends(require_role("admin"))):
     )
 
 
-# ----------------------------------------------------------------- system
+
 
 @router.get("/system/info", response_model=SystemInfo)
 async def system_info(
@@ -67,9 +68,9 @@ async def system_info(
 
     if isinstance(pool, QueuePool):
         pool_size = pool.size()
-        max_overflow = pool._max_overflow          # noqa: SLF001
-        pool_recycle = pool._recycle               # noqa: SLF001
-        pool_timeout = pool._timeout               # noqa: SLF001
+        max_overflow = pool._max_overflow
+        pool_recycle = pool._recycle
+        pool_timeout = pool._timeout
     else:
         pool_size = int(getattr(pool, "size", lambda: 0)() or 0)
         max_overflow = int(getattr(pool, "_max_overflow", 0) or 0)
@@ -83,6 +84,38 @@ async def system_info(
 
     count, total = await BackupService(db).total_size()
 
+    # --- ПРОВЕРКА КОМПОНЕНТОВ ЯДРА ---
+    simcore_ok = False
+    tts_ok = False
+    qwen_ok = False
+
+    async with httpx.AsyncClient(timeout=1.0, verify=False) as client:
+        # 1. Проверяем C# SimCore
+        try:
+            state_data = await SimCoreClient().state()
+            simcore_ok = "isRunning" in state_data
+        except Exception:
+            logger.debug("SimCore monitor ping failed")
+
+        # 2. Проверяем TTS Server (FastAPI возвращает 404 на корень, что подтверждает его запуск)
+        try:
+            tts_res = await client.get("https://localhost:8000/")
+            tts_ok = tts_res.status_code in (200, 404, 405)
+        except Exception:
+            logger.debug("TTS monitor ping failed")
+
+        # 3. Проверяем Qwen (llama-server)
+        try:
+            qwen_res = await client.get("http://localhost:8080/health")
+            qwen_ok = qwen_res.status_code == 200
+        except Exception:
+            try:
+                qwen_res = await client.get("http://localhost:8080/")
+                qwen_ok = qwen_res.status_code == 200
+            except Exception:
+                logger.debug("Qwen monitor ping failed")
+
+    # СТРОГО ВОЗВРАЩАЕМ ВАЛИДНУЮ МОДЕЛЬ СХЕМЫ С УЧЕТОМ НОВЫХ ФЛАГОВ
     return SystemInfo(
         db_pool_size=pool_size,
         db_max_overflow=max_overflow,
@@ -93,6 +126,9 @@ async def system_info(
         backup_dir=settings.BACKUP_DIR,
         backup_count=count,
         backup_total_bytes=total,
+        simcore_ok=simcore_ok,
+        tts_ok=tts_ok,
+        qwen_ok=qwen_ok,
     )
 
 

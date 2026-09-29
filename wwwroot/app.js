@@ -520,6 +520,10 @@ window.addEventListener("message", (event) => {
 	if (event.data.type === "CARD_SAVED") {
 		const callId =
 			event.data.data?.callId;
+			
+			if (callId === activeSocketCallId) {
+				currentCallCardSaved = true;
+			}
 
 		if ($("newCard")) {
 			$("newCard").style.opacity = "0.4";
@@ -544,6 +548,7 @@ window.addEventListener("message", (event) => {
 });
 let activeSocketCallId = null;
 let currentCardWindow = null;
+let currentCallCardSaved = false;
 
 function showCurrentCallWidget(callId, callerPhone) {
     const widget = $("avayaWidget");
@@ -606,7 +611,7 @@ async function hangupCurrentCall() {
         }
 
         activeSocketCallId = null;
-
+		currentCallCardSaved = false;
         stopVoiceStreaming();
         hideCurrentCallWidget();
 
@@ -713,13 +718,13 @@ async function fetchSystemState() {
             `${PYTHON_API_BASE}/runtime/calls/saved?studentId=${encodeURIComponent(CURRENT_STUDENT_ID)}`,
             { cache: "no-store" }
         );
-        let serverSavedCards = [];
-        if (savedResponse.ok) {
-            const savedData = await savedResponse.json();
-            serverSavedCards = (savedData.items || [])
-                .map(x => x.operatorCard || x)
-                .filter(Boolean);
-        }
+		let serverSavedCards = [];
+		if (savedResponse.ok) {
+			const savedData = await savedResponse.json();
+			serverSavedCards = (savedData.items || [])
+				.filter(x => x.cardReceived === true && x.operatorCard)
+				.map(x => x.operatorCard);
+		}
 
         const serverCalls = (data.activeCalls || []).map(c => {
             const callMeta = getCallMeta(c);
@@ -861,6 +866,7 @@ let mediaStreamSource = null;
 let processorNode = null;
 function showAvayaIncomingCall(callId, callerPhone) {
     activeSocketCallId = callId;
+	currentCallCardSaved = false;
     console.log("[AVAYA] Входящий звонок:", callId);
     console.log("[AVAYA] Номер заявителя:", callerPhone);
     // ==========================================================
@@ -1161,6 +1167,19 @@ async function checkAudioAccess() {
 }
 
 checkAudioAccess();
+
+setInterval(() => {
+    if (!accessToken) return;
+
+    fetch(`${PYTHON_API_BASE}/auth/heartbeat`, {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${accessToken}`
+        }
+    }).catch(() => {});
+}, 10000);
+
+
 
 (async () => {
     try {
