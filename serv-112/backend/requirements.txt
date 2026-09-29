@@ -19,3 +19,6 @@ pydantic-settings
 python-jose[cryptography]
 bcrypt>=4.1
 httpx>=0.27,<1
+#--- admin ---
+PySide6
+psutil
